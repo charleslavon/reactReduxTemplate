@@ -27,3 +27,10 @@ export function addAttendee(attendee) {
     name: attendee.name
   };
 }
+
+export function likeWod(wodId) {
+    return {
+      type: types.ADD_LIKE,
+      id: wodId
+    };
+}

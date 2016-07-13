@@ -103,4 +103,21 @@ describe('wods reducer', () => {
       expect(stateAfter[0]).to.deep.equal(wod_withAttendeeAndComment);
   });
 
+  it('add like should increment the likes value', () => {
+    const action = {
+      type: types.ADD_LIKE,
+      id: wod.id
+    }
+
+    var stateBefore = [wod];
+
+    deepFreeze(stateBefore);
+    deepFreeze(action);
+
+    expect(stateBefore[0].likes).to.equal(0);
+    var stateAfter = wods(stateBefore, action);
+    expect(stateAfter[0].likes).to.equal(1);
+
+  });
+
 });

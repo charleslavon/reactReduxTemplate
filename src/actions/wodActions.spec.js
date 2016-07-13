@@ -13,15 +13,16 @@ describe('Actions', () => {
   };
 
   const attendee = {
-    id: 0,
+    id: newWod.id,
     name: 'Mike'
   };
 
   const comment = {
-    id: 0,
+    id: newWod.id,
     author: 'Mike',
     comment: "I'll meet you at 1pm!"
   };
+
 
   it('should populate an action to save a new wod', () => {
     const expected = {
@@ -37,6 +38,15 @@ describe('Actions', () => {
     expect(ActionCreators.saveWod(newWod)).to.deep.equal(expected);
     // This would fail because it's not deeply equal
     // expect(ActionCreators.saveFuelSavings(appState)).to.equal(expected);
+  });
+
+  it('should populate an aciton to increment a wod\'s likes', () =>{
+    const expected = {
+      type: ActionTypes.ADD_LIKE,
+      id: newWod.id
+    };
+
+    expect(ActionCreators.likeWod(newWod.id)).to.deep.equal(expected);
   });
 
   it('should populate an action to add an attendee', () => {
