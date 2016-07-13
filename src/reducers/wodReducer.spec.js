@@ -1,5 +1,6 @@
 import wods from './wodReducer';
 
+import uuid from 'uuid';
 import {expect} from 'chai';
 import deepFreeze from 'deep-freeze';
 
@@ -9,7 +10,7 @@ describe('wods reducer', () => {
 
 
   const wod = {
-    id: 0,
+    id: uuid.v1(),
     author: 'charles',
     date: '12-07-2016',
     location: 'Crossfit PobleNou',
@@ -20,7 +21,7 @@ describe('wods reducer', () => {
   };
 
   const wod_withAttendee = {
-    id: 0,
+    id: wod.id,
     author: 'charles',
     date: '12-07-2016',
     location: 'Crossfit PobleNou',
@@ -30,8 +31,8 @@ describe('wods reducer', () => {
     attendees: ['Kelsey']
   };
 
-  var wod_withAttendeeAndComment = {
-    id: 0,
+  const wod_withAttendeeAndComment = {
+    id: wod.id,
     author: 'charles',
     date: '12-07-2016',
     location: 'Crossfit PobleNou',
@@ -44,39 +45,11 @@ describe('wods reducer', () => {
     attendees: ['Kelsey']
   };
 
-  it('add attendee push a new attendee object on the wod.attendees array', () => {
-
-    const action = {
-      type: types.ADD_ATTENDEE,
-      id: 0,
-      name: 'Kelsey'
-    };
-
-    deepFreeze(wod);
-    deepFreeze(action);
-
-
-    expect([wod].filter((wod) => wod.id === action.id).length).to.equal(1);
-    var stateAfter = wods([wod], action);
-    expect(stateAfter.length).to.equal(1);
-    console.log(stateAfter);
-    expect(stateAfter[0].attendees.length).to.equal(1);
-    expect(stateAfter[0]).to.deep.equal(wod_withAttendee);
-  });
-
-  it('add comment push a new comment object on the wod.comments array', () => {
-
-  });
-
-  it('new wods should have incrementing ids', () => {
-
-  });
-
   it('should add a new wod by creating a new state object', () => {
       const stateBefore = [];
       const action = {
         type: types.ADD_WOD,
-        id: 0,
+        id: wod.id,
         author: 'charles',
         date: '12-07-2016',
         location: 'Crossfit PobleNou',
@@ -93,6 +66,41 @@ describe('wods reducer', () => {
       deepFreeze(action);
 
       expect(wods(wod, action)).to.deep.equal(stateAfter);
+  });
+
+  it('add attendee push a new attendee object on the wod.attendees array', () => {
+
+    const action = {
+      type: types.ADD_ATTENDEE,
+      id: wod.id,
+      name: 'Kelsey'
+    };
+
+    deepFreeze(wod);
+    deepFreeze(action);
+
+    var stateAfter = wods([wod], action);
+    expect(stateAfter.length).to.equal(1);
+
+    expect(stateAfter[0].attendees.length).to.equal(1);
+    expect(stateAfter[0]).to.deep.equal(wod_withAttendee);
+  });
+
+  it('add comment push a new comment object on the wod.comments array', () => {
+      const action = {
+        type: types.ADD_COMMENT,
+        id: wod_withAttendee.id,
+        author: 'Kelsey',
+        comment: 'cool. I might join.'
+      };
+
+      deepFreeze(wod_withAttendee);
+      deepFreeze(action);
+
+      var stateAfter = wods([wod_withAttendee], action);
+
+      expect(stateAfter[0].comments.length).to.equal(1);
+      expect(stateAfter[0]).to.deep.equal(wod_withAttendeeAndComment);
   });
 
 });

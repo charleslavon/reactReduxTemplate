@@ -22,9 +22,17 @@ const wodsReducer = (state = [], action ) => {
         if(wod.id !== action.id) { //only update the wod whose id matches action.id
           return wod;
         }
+        //create a new object {} that contains the propertye of the following two args
         return Object.assign({}, wod, {attendees: [...wod['attendees'], action.name]});
       });
-    // add comment
+    case types.ADD_COMMENT:
+      return state.map(wod => {
+        if(wod.id !== action.id) {
+          return wod;
+        }
+        var newComment = {author:action.author, comment:action.comment};
+        return Object.assign({}, wod, {comments: [...wod['comments'], newComment]});
+      });
     // add like
     default:
       return state;
