@@ -79,7 +79,7 @@ describe('wods reducer', () => {
     deepFreeze(wod);
     deepFreeze(action);
 
-    var stateAfter = wods([wod], action);
+    let stateAfter = wods([wod], action);
     expect(stateAfter.length).to.equal(1);
 
     expect(stateAfter[0].attendees.length).to.equal(1);
@@ -97,7 +97,7 @@ describe('wods reducer', () => {
       deepFreeze(wod_withAttendee);
       deepFreeze(action);
 
-      var stateAfter = wods([wod_withAttendee], action);
+      let stateAfter = wods([wod_withAttendee], action);
 
       expect(stateAfter[0].comments.length).to.equal(1);
       expect(stateAfter[0]).to.deep.equal(wod_withAttendeeAndComment);
@@ -107,17 +107,26 @@ describe('wods reducer', () => {
     const action = {
       type: types.ADD_LIKE,
       id: wod.id
-    }
+    };
 
-    var stateBefore = [wod];
+    let stateBefore = [wod];
 
     deepFreeze(stateBefore);
     deepFreeze(action);
 
     expect(stateBefore[0].likes).to.equal(0);
-    var stateAfter = wods(stateBefore, action);
+    let stateAfter = wods(stateBefore, action);
     expect(stateAfter[0].likes).to.equal(1);
 
+  });
+
+  it('googlePOI should call the expected API', () => {
+
+    const action = {
+      type: "GOOGLE"
+    };
+
+    expect(wods(action, [wod]));
   });
 
 });

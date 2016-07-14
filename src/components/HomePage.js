@@ -1,18 +1,24 @@
 import React from 'react';
-import {Link} from 'react-router';
+import Wod from './Wod';
 
-const HomePage = () => {
+const HomePage = ( {store} ) => {
   return (
     <div>
-      <h1>React Slingshot</h1>
+      <h1>Workout Planner</h1>
 
-      <h2>Get Started</h2>
-      <ol>
-        <li>Review the <Link to="fuel-savings">demo app</Link></li>
-        <li>Remove the demo and start coding: npm run remove-demo</li>
-      </ol>
+      <h2>Make plans to train with your friends</h2>
+
+      {store.wods.map(wod =>
+        <Wod location={wod.location} author={wod.author} id={wod.id}
+          date={wod.date} likes={wod.likes} comments={wod.comments}
+          attendees={wod.attendees} description={wod.description}/>
+      )}
     </div>
   );
+};
+
+HomePage.propTypes = {
+  store: React.PropTypes.object
 };
 
 export default HomePage;
