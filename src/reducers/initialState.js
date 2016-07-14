@@ -1,6 +1,6 @@
 export default {
   wods: [{
-    id: 0,
+    id: '0',
     author: 'charles',
     date: '12-07-2016',
     location: 'Crossfit PobleNou',

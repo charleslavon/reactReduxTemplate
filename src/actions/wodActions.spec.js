@@ -27,9 +27,8 @@ describe('Actions', () => {
   it('should populate an action to save a new wod', () => {
     const expected = {
       type: ActionTypes.ADD_WOD,
-      id: newWod.id,
       author: newWod.author,
-      date: newWod.date,
+      date: ActionCreators.getDate(),
       location: newWod.location,
       description: newWod.description
     };

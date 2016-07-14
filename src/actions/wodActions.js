@@ -3,9 +3,8 @@ import * as types from '../constants/actionTypes';
 export function saveWod(wod) {
   return {
       type: types.ADD_WOD,
-      id: wod.id,
       author: wod.author,
-      date: wod.date,
+      date: getDate(),
       location: wod.location,
       description: wod.description,
     };
@@ -34,3 +33,9 @@ export function likeWod(wodId) {
       id: wodId
     };
 }
+
+//only exporting this function in support of unit tests
+export function getDate() {
+  let d = new Date();
+  return d.getDay() +" "+ d.getMonth() +" "+ d.getDate();
+};

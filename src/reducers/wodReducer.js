@@ -1,5 +1,6 @@
 import * as types from '../constants/actionTypes';
 import InitialState from './initialState';
+import uuid from 'uuid';
 
 //seperating concerns with the use of multiple specialized reducers
 const reducers = (state = InitialState.wods, action ) => {
@@ -27,7 +28,7 @@ const wods = (state, action) => {
   switch(action.type) {
     case types.ADD_WOD:
       return {
-        id: action.id,
+        id: uuid.v1(),
         author: action.author,
         date: action.date,
         location: action.location,

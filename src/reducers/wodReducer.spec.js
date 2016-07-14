@@ -49,7 +49,6 @@ describe('wods reducer', () => {
       const stateBefore = [];
       const action = {
         type: types.ADD_WOD,
-        id: wod.id,
         author: 'charles',
         date: '12-07-2016',
         location: 'Crossfit PobleNou',
@@ -65,7 +64,11 @@ describe('wods reducer', () => {
       deepFreeze(stateBefore);
       deepFreeze(action);
 
-      expect(wods(wod, action)).to.deep.equal(stateAfter);
+      let addedWod = wods(wod, action);
+      //hack to skip trying to verify the id
+      addedWod[0].id = wod.id;
+
+      expect(addedWod).to.deep.equal(stateAfter);
   });
 
   it('add attendee push a new attendee object on the wod.attendees array', () => {

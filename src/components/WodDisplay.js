@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const Wod = props => {
+const WodDisplay = props => {
   return (
       <section>
         <h3>{props.author} </h3>
         <article>
           <span>{props.description}</span>
-          <ol>
+          <ul>
             <li>where: {props.location}</li>
             <li>when: {props.date}</li>
             <li>likes: {props.likes}</li>
@@ -21,13 +21,14 @@ const Wod = props => {
                 <li>{attendee}</li>
               )}
             </ol>
-          </ol>
+          </ul>
         </article>
       </section>
   );
 };
 
-Wod.propTypes = {
+
+WodDisplay.propTypes = {
   id: React.PropTypes.string,
   author: React.PropTypes.string,
   location: React.PropTypes.string,
@@ -38,4 +39,4 @@ Wod.propTypes = {
   attendees: React.PropTypes.arrayOf(React.PropTypes.string)
 };
 
-export default Wod;
+export default WodDisplay;
