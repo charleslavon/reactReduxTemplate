@@ -1,8 +1,4 @@
 import React from 'react';
-import uuid from 'uuid';
-import {ADD_WOD} from '../constants/actionTypes';
-import $ from 'jquery';
-
 
 const WodAdd = ( {onSave} ) => {
 
@@ -20,14 +16,18 @@ const WodAdd = ( {onSave} ) => {
         location = node;
       }}/>
 
-    <button onClick={onSave({author, description, location})}>Save</button>
+    <button onClick={() => {onSave({
+          author:author.value,
+          description:description.value,
+          location:location.value})}}>Save
+    </button>
 
     </div>
   );
 };
 
 WodAdd.propTypes = {
-  onSave: React.PropTypes.function
+  onSave: React.PropTypes.func
 };
 
 
