@@ -11,7 +11,7 @@ const Attendee = ({wodId, addAttendee}) => {
       <button onClick={() => {addAttendee({
         id: wodId,
         name: attendee.value
-      })
+      });
       attendee.value = '';
     }}>I'll join</button>
     </section>

@@ -31,7 +31,10 @@ const HomePage = ( {wods, onSave, addAttendee, likeWod, addComment} ) => {
 HomePage.propTypes = {
   wods: React.PropTypes.array,
   store: React.PropTypes.object,
-  onSave: React.PropTypes.func
+  onSave: React.PropTypes.func,
+  addAttendee: React.PropTypes.func,
+  addComment: React.PropTypes.func,
+  likeWod: React.PropTypes.func
 };
 
 export default HomePage;

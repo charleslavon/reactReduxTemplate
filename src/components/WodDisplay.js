@@ -13,7 +13,7 @@ const WodDisplay = props => {
           <ul>
             <li>where: {props.location}</li>
             <li>when: {props.date}</li>
-            <li onClick={() => { props.likeWod(props.id)} }>like: {props.likes}</li>
+            <li onClick={() => { props.likeWod(props.id);}}>like: {props.likes}</li>
             comments:
               <ul>
               {props.comments.map(comment =>
@@ -42,6 +42,8 @@ WodDisplay.propTypes = {
   date: React.PropTypes.string,
   description: React.PropTypes.string,
   likes: React.PropTypes.number,
+  addComment: React.PropTypes.func,
+  addAttendee: React.PropTypes.func,
   comments: React.PropTypes.arrayOf(React.PropTypes.object),
   attendees: React.PropTypes.arrayOf(React.PropTypes.string)
 };

@@ -51,7 +51,6 @@ const likes = (wod, action) => {
         } else {
           return wod;
         }
-        break;
       default:
         return wod;
     }
@@ -66,7 +65,6 @@ const comments = (wod, action) => {
       } else {
        return wod;
       }
-      break;
     default:
       return wod;
   }
@@ -81,7 +79,6 @@ const attendees = (wod, action) => {
       else {
         return wod;
       }
-      break;
     default:
       return wod;
   }
