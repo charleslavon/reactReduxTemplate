@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.connect</groupId>
+  <artifactId>reactjs-FE-template</artifactId>
+  <packaging>war</packaging>
+  <version>1.20.1-SNAPSHOT</version>
+  <scm>
+    <connection>
+      scm:git:https://git.assembla.com/tgt-git.web-team.git
+    </connection>
+  </scm>
+  <properties>
+    <war.file.name>ROOT</war.file.name>
+    <app.version.major>1</app.version.major>
+    <app.version.minor>20</app.version.minor>
+    <app.version.milestone>1</app.version.milestone>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+      <!--  No java dependencies. We are just using maven for packaging.  -->
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <warName>${war.file.name}</warName>
+          <webResources>
+            <resource>
+              <!-- this is relative to the pom.xml directory -->
+              <directory>src</directory>
+              <directory>dist</directory>
+            </resource>
+          </webResources>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+            <manifestEntries>
+              <Implementation-Build>${env.SVN_REVISION}</Implementation-Build>
+              <AppVersionMajor>${app.version.major}</AppVersionMajor>
+              <AppVersionMinor>${app.version.minor}</AppVersionMinor>
+              <AppVersionMicro>${app.version.milestone}</AppVersionMicro>
+              <JenkinsBuildId>${env.BUILD_ID}</JenkinsBuildId>
+              <JenkinsBuildTag>${env.BUILD_TAG}</JenkinsBuildTag>
+              <JenkinsJobName>${env.JOB_NAME}</JenkinsJobName>
+              <JenkinsBuildNumber>${env.BUILD_NUMBER}</JenkinsBuildNumber>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+      <!--  Install & Build Front-end Resources  -->
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>0.0.27</version>
+        <executions>
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+              <nodeVersion>v4.2.6</nodeVersion>
+              <npmVersion>3.7.5</npmVersion>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm install</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+                <arguments>install</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>pre-build</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+                <arguments>run test</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>build</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+                <arguments>run build</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+</plugins>
+</build>
+</project>

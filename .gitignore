@@ -13,27 +13,19 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+# Grunt intermediate storage
 .grunt
 
-# node-waf configuration
-.lock-wscript
 
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directory
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+# Dependencies
 node_modules
+src/node
+node 
 
-#dist folder
+#build folders
 dist
+target 
 
-#Webstorm metadata
-.idea
-
-#VSCode metadata
-.vscode
 
 # Mac files
 .DS_Store
