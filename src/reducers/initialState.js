@@ -8,7 +8,7 @@ export default {
     location: 'Crossfit PobleNou',
     description: "I'm headed in around 10am to do a couple hours of open box.",
     likes: 0,
-    comments: [],
-    attendees: []
+    comments: [{author: "Michael", comment: "Sounds fun!"}],
+    attendees: ["Michael"]
   }]
 };

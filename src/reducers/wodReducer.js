@@ -48,6 +48,8 @@ const likes = (wod, action) => {
         if(wod.id === action.id) {
           //create a new object {} that contains the propertye of the following two args
           return Object.assign({}, wod, {likes: wod.likes+1});
+        } else {
+          return wod;
         }
         break;
       default:
@@ -61,6 +63,8 @@ const comments = (wod, action) => {
       if(wod.id === action.id) {
         let newComment = {author:action.author, comment:action.comment};
         return Object.assign({}, wod, {comments: [...wod['comments'], newComment]});
+      } else {
+       return wod;
       }
       break;
     default:
@@ -73,6 +77,9 @@ const attendees = (wod, action) => {
     case types.ADD_ATTENDEE:
       if(wod.id === action.id) {
         return Object.assign({}, wod, {attendees: [...wod['attendees'], action.name]});
+      }
+      else {
+        return wod;
       }
       break;
     default:

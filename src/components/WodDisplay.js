@@ -1,5 +1,8 @@
 import React from 'react';
+import uuid from 'uuid';
 
+import Attendee from './Attendee';
+import Comment from './Comment';
 
 const WodDisplay = props => {
   return (
@@ -10,17 +13,21 @@ const WodDisplay = props => {
           <ul>
             <li>where: {props.location}</li>
             <li>when: {props.date}</li>
-            <li>likes: {props.likes}</li>
-            <ol>comments:
-              {props.comments.forEach(comment =>
-                <li>{comment.author} says {comment.comment}</li>
+            <li onClick={() => { props.likeWod(props.id)} }>like: {props.likes}</li>
+            comments:
+              <ul>
+              {props.comments.map(comment =>
+                <li key={uuid.v4()}>{comment.author} says {comment.comment}</li>
               )}
-            </ol>
-            <ol>attendees:
-              {props.attendees.forEach(attendee =>
-                <li>{attendee}</li>
+              </ul>
+              <Comment wodId={props.id} addComment={props.addComment} />
+            attendees:
+              <ol>
+              {props.attendees.map(attendee =>
+                <li key={uuid.v4()}>{attendee}</li>
               )}
-            </ol>
+              </ol>
+              <Attendee wodId={props.id} addAttendee={props.addAttendee} />
           </ul>
         </article>
       </section>

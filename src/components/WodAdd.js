@@ -19,7 +19,12 @@ const WodAdd = ( {onSave} ) => {
     <button onClick={() => {onSave({
           author:author.value,
           description:description.value,
-          location:location.value})}}>Save
+          location:location.value})
+
+          author.value = '';
+          description.value = '';
+          location.value = '';
+        }}>Save
     </button>
 
     </div>

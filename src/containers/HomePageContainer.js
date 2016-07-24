@@ -8,6 +8,9 @@ export const HomePageContainer = ( props) => {
   return (
     <HomePage
       onSave={props.actions.saveWod}
+      addAttendee={props.actions.addAttendee}
+      likeWod={props.actions.likeWod}
+      addComment={props.actions.addComment}
       wods={props.wods}
     />
   );

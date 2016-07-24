@@ -10,7 +10,6 @@ require('./favicon.ico'); // Tell webpack to load favicon.ico
 import './styles/styles.scss';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import HomeContainer from './containers/HomePageContainer';
 
 const store = configureStore();
 
