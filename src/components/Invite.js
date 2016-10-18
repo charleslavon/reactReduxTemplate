@@ -3,25 +3,25 @@ import React from 'react';
 
 
 const InviteAFriend = (sendInvite) => {
-	let email;
+  let email;
 
-	return (
-		<section>
-			<input placeholder="Your friend's email" ref={node => {
-				email = node;
-			}}/>
-			<button onClick={() ={sendInvite({
-					email: email.value
-				});
-			email.value = '';
-			}}>Send Invite</button>
-		</section>
-	)
+  return (
+    <section>
+      <input placeholder="Your friend's email" ref={node => {
+        email = node;
+      }}/>
+      <button onClick={() => {sendInvite({
+          email: email.value
+        });
+      email.value = '';
+      }}>Send Invite</button>
+    </section>
+  );
 };
 
 
-Invite.propTypes = {
-	sendInvite: React.PropTypes.func;
+InviteAFriend.propTypes = {
+  sendInvite: React.PropTypes.func
 };
 
-export default Invite;
+export default InviteAFriend;

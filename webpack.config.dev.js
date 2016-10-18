@@ -1,19 +1,18 @@
 import webpack from 'webpack';
 import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   debug: true,
-  devtool: 'cheap-module-eval-source-map', // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
-  noInfo: true, // set to false to see a list of every file being bundled.
+  devtool: 'source-map',
+  noInfo: true,
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    './src/index'
+    './src/index.js',
   ],
-  target: 'web', // necessary per https://webpack.github.io/docs/testing.html#compile-and-test
+  target: 'web',
   output: {
-    path: `${__dirname}/src`, // Note: Physical files are only output by the production build task `npm run build`.
-    publicPath: 'http://localhost:3000/', // Use absolute paths to avoid the way that URLs are resolved by Chrome when they're parsed from a dynamically loaded CSS blob. Note: Only necessary in Dev.
+    path:`${__dirname}/dist`,
+    publicPath: '/',
     filename: 'bundle.js'
   },
   plugins: [
@@ -22,15 +21,7 @@ export default {
       __DEV__: true
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new HtmlWebpackPlugin({     // Create HTML file that includes references to bundled CSS and JS.
-      template: 'src/index.ejs',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      },
-      inject: true
-    })
+    new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [
@@ -43,5 +34,12 @@ export default {
       {test: /\.ico$/, loader: 'file-loader?name=[name].[ext]'},
       {test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap']}
     ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './src'
   }
 };
