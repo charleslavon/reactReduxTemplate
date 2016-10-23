@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   debug: true,
@@ -7,7 +8,7 @@ export default {
   noInfo: true,
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    './src/index.js',
+    './src/index',
   ],
   target: 'web',
   output: {
@@ -17,11 +18,19 @@ export default {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'), // Tells React to build in either dev or prod modes. https://facebook.github.io/react/downloads.html (See bottom)
+      'process.env.NODE_ENV': JSON.stringify('development'),
       __DEV__: true
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new HtmlWebpackPlugin({     // Create HTML file that includes references to bundled CSS and JS.
+      template: 'src/index.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      },
+      inject: true
+    })
   ],
   module: {
     loaders: [
