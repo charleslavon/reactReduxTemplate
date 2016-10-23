@@ -1,0 +1,25 @@
+@import "skeleton";
+
+/* Base styles */
+
+body {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-smoothing: antialiased;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+
+
+
+
+//remove these after implemneting the new views
+section {
+    outline: 1px solid #F6A1A1;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+#wodAdd {
+    display: none;
+}
