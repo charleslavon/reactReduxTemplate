@@ -24,7 +24,7 @@ const WodDisplay = props => {
             attendees:
               <ol>
               {props.attendees.map(attendee =>
-                <li key={uuid.v4()}>{attendee}</li>
+                <li key={attendee.id}>{attendee.name}</li>
               )}
               </ol>
               <Attendee wodId={props.id} addAttendee={props.addAttendee} />
