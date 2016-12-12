@@ -1,26 +1,53 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from '../actions/startupActions';
 import StartupFrame from '../components/StartupFrame';
 import FacebookLogin from 'react-fb-auth';
-import request from 'request';
+import * as api from '../actions/spottrapi';
 
 class StartupContainer extends React.Component {
 
   constructor(props, context) {
     super(props, context);
     console.debug('StartupContainer constructor called.');
+
+    this.state = {
+      fbAuthToken: null
+    };
+
+    this.handleFacebookResponse = this.handleFacebookResponse.bind(this);
   }
 
   componentDidMount() {
     /* is invoked immediately after a component is mounted. Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request. Setting state in this method will trigger a re-rendering.
     */
-
-
   }
 
-  response(response) {
+  handleFacebookResponse(response) {
     // Send the token to the server and link the account
     console.log(response);
-  };
+
+    if(response.accessToken) {
+      let shortName = response.name.substring(0, response.name.indexOf(' ')).trim();
+
+      this.setState({
+        fbAuthToken: response.accessToken
+      });
+
+      api.saveAthlete(shortName, response.email)
+       .then(response => {
+          debugger;
+          this.props.actions.addNewAthlete({email:response.email, name:response.name, id: response.id});
+          //this.context.router.push('/wods');
+           })
+       .catch(error => {
+        console.log(error);
+        throw(error);
+      });
+    }
+
+  }
 
   render() {
     return (
@@ -28,10 +55,10 @@ class StartupContainer extends React.Component {
           <FacebookLogin
             appId="610077532508385"
             component={({onClick}) => {
-                return <button onClick={onClick}>Facebook Login</button>
+                return <button onClick={onClick}>Facebook Login</button>;
             }}
             fields="name,email,picture"
-            callback={this.response}
+            callback={this.handleFacebookResponse}
           />
         </StartupFrame>
     );
@@ -39,5 +66,27 @@ class StartupContainer extends React.Component {
 }
 
 
+function mapStateToProps(state) {
+    return {
+      athletes: state.athletes
+    };
+  }
 
-export default StartupContainer;
+function mapDispatchToProps(dispatch) {
+    return {
+      actions: bindActionCreators(actions, dispatch)
+    };
+  }
+
+StartupContainer.contextTypes = {
+    router: PropTypes.object.isRequired
+};
+
+StartupContainer.propTypes = {
+  actions: PropTypes.object.isRequired
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StartupContainer);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Footer from './Footer';
 
 
@@ -13,6 +13,10 @@ const StartupFrame = (props) => {
       <Footer/>
     </div>
   );
+};
+
+StartupFrame.propTypes = {
+  children: PropTypes.element.required
 };
 
 

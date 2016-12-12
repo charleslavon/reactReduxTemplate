@@ -7,7 +7,7 @@ let styles = {
 const Footer = () => {
   return (
     <footer className={styles}>spottr footer logo</footer>
-  )
-}
+  );
+};
 
 export default Footer;

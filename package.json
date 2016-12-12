@@ -1,5 +1,5 @@
 {
-  "name": "spottr-web",
+  "name": "spottr-ui",
   "version": "0.0.5",
   "description": "Mobile optmized UI for spottr MVP. Targeting Google chrome  on Galaxy S6Edge",
   "options": {
@@ -45,6 +45,7 @@
   },
   "homepage": "https://github.com/charleslavon/spottr-ui#readme",
   "dependencies": {
+    "axios": "^0.15.2",
     "babel-cli": "6.10.1",
     "babel-core": "6.10.4",
     "babel-eslint": "^7.0.0",
