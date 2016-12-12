@@ -10,7 +10,6 @@ class StartupContainer extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-    console.debug('StartupContainer constructor called.');
 
     this.state = {
       fbAuthToken: null
@@ -37,9 +36,9 @@ class StartupContainer extends React.Component {
 
       api.saveAthlete(shortName, response.email)
        .then(response => {
-          debugger;
+
           this.props.actions.addNewAthlete({email:response.email, name:response.name, id: response.id});
-          //this.context.router.push('/wods');
+          this.context.router.push('wods');
            })
        .catch(error => {
         console.log(error);
