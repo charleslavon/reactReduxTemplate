@@ -4,13 +4,24 @@ import {expect} from 'chai';
 import sinon from 'sinon';
 import HomePage from './HomePage';
 import WodAdd from './WodAdd';
-import InitialState from '../reducers/initialState';
 
 
 describe('<HomePage />', () => {
+
+    let initialState = [{
+       id: '0',
+       author: 'charles',
+       date: "December 12, 2016",
+       location: 'Crossfit PobleNou',
+       description: "I'm headed in around 10am to do a couple hours of open box.",
+       likes: 0,
+       comments: [{author: "Michael", comment: "Sounds fun!"}],
+       attendees: ["Michael"]
+    }];
+
     let wrapper;
     before(() => {
-      wrapper = shallow(<HomePage wods={InitialState.wods}/>);
+      wrapper = shallow(<HomePage wods={initialState}/>);
     });
 
     it('should define a header tag', () =>{

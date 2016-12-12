@@ -16,8 +16,6 @@ const reducers = (state = [], action ) => {
       return state.map(wod => comments(wod, action));
     case types.ADD_LIKE:
       return state.map(wod => likes(wod, action));
-    case "GOOGLE": //this is just an example, should be removed
-      return googlePOI(state);
     default:
       return state;
   }
