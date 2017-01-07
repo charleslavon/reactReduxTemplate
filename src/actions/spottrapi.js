@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const server = process.env.SPOTTR_SERVER || "http://spottr-server.herokuapp.com/spottrql";
+const server = process.env.SPOTTR_SERVER || "http://server.spottr.fit/spottrql";
 
 
 axios.defaults.headers.post['Content-Type'] = "application/graphql";
@@ -9,11 +9,14 @@ axios.defaults.headers.post['Content-Type'] = "application/graphql";
 */
 
 
-
 /* curl -XPOST -H "Content-Type:application/graphql" -d 'query {workouts {id, description, author {id, name, email}, likes, comments {id, author {name}, comment}, attendees {id, name}}}' http://clg.local.com:4000/spottrql
 */
 
 /* curl -XPOST -H "Content-Type:application/graphql" -d 'query {workouts {id, description, author {id, name, email}, likes, comments {id, author {name}, comment}, attendees {id, name}}}' http://spottr-server.herokuapp.com/spottrql
+*/
+
+
+/* curl -XPOST -H "Content-Type:application/graphql" -d 'query {workouts {id, description, author {id, name, email}, likes, comments {id, author {name}, comment}, attendees {id, name}}}' http://server.spottr.fit/spottrql
 */
 
 // component uses Actions.* to start an action, Action.*() does the API call/async work, the promise data is used to construct the action it will dispatch
