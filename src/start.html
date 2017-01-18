@@ -8,8 +8,6 @@
         /* TODO convert these to SCSS and use variables & formulas such that if
           we change the width, the other values would update automatically */
 
-        /* TODO add animations to the tag lines*/
-
     /* Common Styles */
     body {
       background-color: #005176;
@@ -41,27 +39,21 @@
       }
       .banner {
         position: absolute;
-        left: 113px;
+        left: 10%;
       }
       .logo-large {
         height: 124px;
         z-index: -1;
       }
-      .small-text {
-        position: absolute;
-        top: 92px;
-        left: 189px;
-      }
       .startpage .tagline {
         position: absolute;
-        top: calc(500px/2.8);
-        margin-left: calc(500px/4);
-        text-align: center;
+        top: calc(500px/1.5);
+        left: 28%;
       }
       .login {
         position: absolute;
-        bottom: 26%;
-        left: calc(500px/5);
+        bottom: 4%;
+        left: 5%;
       }
       .login img {
         height: 89px;
@@ -84,11 +76,11 @@
          text-align: center;
       }
 
-      footer {
+      .banner-flag {
         position: absolute;
         width: 100%;
+        top: calc(500px/3.3);
         height: 20%;
-        bottom: 0px;
         margin-left: -8px;
         background-image: url('images/spottr_banner.png'), url('images/footer_bg_slice.png');
         background-position: center;
@@ -102,18 +94,13 @@
     <div class="container">
       <div class="startpage">
         <section class="banner">
-          <div class="small-text logo-subtext">fitness with a friend</div>
           <img class="logo-large" src="images/spottr_large.png" alt="Spottr large logo"/>
         </section>
+        <section class="banner-flag">
+        </section>
         <section class="tagline">
-          <p id="topdown-animation" class="highlight-text">
-            Don't feel like working out alone?
-          </p>
-          <p id="bottomup-animation" class="highlight-text">
-            Find a workout partner near you.
-          </p>
-          <p id="bottomup-animation2" class="highlight-text">
-            It's not a date, just fitness.
+          <p class="highlight-text">
+            Fitness with a friend
           </p>
         </section>
         <section class="login">
@@ -122,6 +109,5 @@
         </section>
       </div>
     </div>
-    <footer/>
   </body>
 </html>
