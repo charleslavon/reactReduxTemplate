@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <style>
+
+        /* TODO set dimensions based on chrome's iphone6 width and test
+          in chrome and my s6 */
+
+        /* TODO convert these to SCSS and use variables & formulas such that if
+          we change the width, the other values would update automatically */
+
+        /* TODO add animations to the tag lines*/
+
+    /* Common Styles */
+    body {
+      background-color: #005176;
+    }
+    p {
+      margin-top: 0px;
+      margin-bottom: 5px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      line-height: 23px;
+      font-weight: 300;
+      letter-spacing: 0px;
+      text-shadow: none;
+    }
+    .small-text {
+      display: block;
+      color: rgba(241, 235, 247, .4);
+    }
+    .highlight-text {
+      color: #f3b54b;
+      font-size: 20px;
+      line-height: 28px;
+      text-shadow: none;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        width: 500px;
+      }
+      .banner {
+        position: absolute;
+        left: 113px;
+      }
+      .logo-large {
+        height: 124px;
+        z-index: -1;
+      }
+      .small-text {
+        position: absolute;
+        top: 92px;
+        left: 189px;
+      }
+      .startpage .tagline {
+        position: absolute;
+        top: calc(500px/2.8);
+        margin-left: calc(500px/4);
+        text-align: center;
+      }
+      .login {
+        position: absolute;
+        bottom: 26%;
+        left: calc(500px/5);
+      }
+      .login img {
+        height: 89px;
+        display: block;
+        margin: 30px auto 0px auto;
+      }
+      input[type=email] {
+        border-top: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        border-bottom: 2px solid #abd6e7;
+        background-color: inherit;
+        font-family: 'Open Sans', sans-serif;
+        height: 45px;
+        font-size: 30px;
+        padding: 5px;
+        color: #abd6e7;
+      }
+      ::-webkit-input-placeholder {
+         text-align: center;
+      }
+
+      footer {
+        position: absolute;
+        width: 100%;
+        height: 20%;
+        bottom: 0px;
+        margin-left: -8px;
+        background-image: url('images/spottr_banner.png'), url('images/footer_bg_slice.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat, repeat;
+        background-attachment: scroll, scroll;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="startpage">
+        <section class="banner">
+          <div class="small-text logo-subtext">fitness with a friend</div>
+          <img class="logo-large" src="images/spottr_large.png" alt="Spottr large logo"/>
+        </section>
+        <section class="tagline">
+          <p id="topdown-animation" class="highlight-text">
+            Don't feel like working out alone?
+          </p>
+          <p id="bottomup-animation" class="highlight-text">
+            Find a workout partner near you.
+          </p>
+          <p id="bottomup-animation2" class="highlight-text">
+            It's not a date, just fitness.
+          </p>
+        </section>
+        <section class="login">
+          <input type="email" size="22" placeholder="email address">
+          <img src="images/go.png" alt="login">
+        </section>
+      </div>
+    </div>
+    <footer/>
+  </body>
+</html>
