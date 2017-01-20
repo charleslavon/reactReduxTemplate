@@ -86,7 +86,7 @@
     "deep-freeze": "0.0.1",
     "enzyme": "^2.5.1",
     "eslint": "^3.8.1",
-    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "1.5.5",
     "eslint-plugin-react": "^6.4.1",
     "eslint-watch": "^2.1.14",

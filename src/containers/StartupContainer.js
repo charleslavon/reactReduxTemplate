@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/startupActions';
-import StartupFrame from '../components/StartupFrame';
+import Startup from '../components/Startup';
 import FacebookLogin from 'react-fb-auth';
 import * as api from '../actions/spottrapi';
 
@@ -50,7 +50,8 @@ class StartupContainer extends React.Component {
 
   render() {
     return (
-        <StartupFrame>
+        <Startup>
+        {/*
           <FacebookLogin
             appId="610077532508385"
             component={({onClick}) => {
@@ -59,7 +60,9 @@ class StartupContainer extends React.Component {
             fields="name,email,picture"
             callback={this.handleFacebookResponse}
           />
-        </StartupFrame>
+
+          */}
+          </Startup>
     );
   }
 }

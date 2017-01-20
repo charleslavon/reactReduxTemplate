@@ -1,25 +1,94 @@
-@import "skeleton";
-
-/* Base styles */
-
-body {
-    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-smoothing: antialiased;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-}
 
 
-
-
-//remove these after implemneting the new views
-section {
-    outline: 1px solid #F6A1A1;
-    padding: 15px;
-    margin-bottom: 10px;
-}
-
+/* can probably delete these */
 #wodAdd {
     display: none;
+}
+
+
+/* TODO need to set ServerURL:Port as SCSS variables
+  initialized with env system props*/
+
+/* Common Styles */
+body {
+  background-color: #005176;
+}
+p {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 300;
+  letter-spacing: 0px;
+  text-shadow: none;
+}
+.small-text {
+  display: block;
+  color: rgba(241, 235, 247, .4);
+}
+.highlight-text {
+  color: #f3b54b;
+  font-size: 20px;
+  line-height: 28px;
+  text-shadow: none;
+}
+
+
+/* Targeted Styles */
+@media (max-width: 600px) {
+  body {
+    width: 500px;
+  }
+  .banner {
+    position: absolute;
+    left: 10%;
+  }
+  .logo-large {
+    height: 124px;
+    z-index: -1;
+  }
+  .startpage .tagline {
+    position: absolute;
+    top: calc(500px/1.5);
+    left: 28%;
+  }
+  .login {
+    position: absolute;
+    bottom: 4%;
+    left: 5%;
+  }
+  .login img {
+    height: 89px;
+    display: block;
+    margin: 30px auto 0px auto;
+  }
+  input[type=email] {
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 2px solid #abd6e7;
+    background-color: inherit;
+    font-family: 'Open Sans', sans-serif;
+    height: 45px;
+    font-size: 30px;
+    padding: 5px;
+    color: #abd6e7;
+  }
+  ::-webkit-input-placeholder {
+     text-align: center;
+  }
+
+  .banner-flag {
+    position: absolute;
+    width: 100%;
+    top: calc(500px/3.3);
+    height: 20%;
+    margin-left: -8px;
+    background-image: url(http://localhost:8080/images/spottr_banner.png), url(http://localhost:8080/images/footer_bg_slice.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat, repeat;
+    background-attachment: scroll, scroll;
+  }
 }
