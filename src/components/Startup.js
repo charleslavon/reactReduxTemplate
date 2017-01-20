@@ -1,11 +1,15 @@
 import React, {PropTypes} from 'react';
+import logo from '../images/spottr_large.png';
+import go from'../images/go.png';
+import '../images/spottr_banner.png';
+import '../images/footer_bg_slice.png';
 
 const Startup = (props) => {
   return(
     <div className="container">
       <div className="startpage">
         <section className="banner">
-          <img className="logo-large" src="../images/spottr_large.png" alt="Spottr large logo"/>
+          <img className="logo-large" src={logo} alt="Spottr large logo"/>
         </section>
         <section className="banner-flag">
         </section>
@@ -16,7 +20,7 @@ const Startup = (props) => {
         </section>
         <section className="login">
           <input type="email" size="22" placeholder="email address"/>
-          <img src="../images/go.png" alt="login"/>
+          <img src={go} alt="login"/>
         </section>
       </div>
     </div>

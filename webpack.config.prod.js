@@ -1,6 +1,5 @@
 import webpack from 'webpack';
 import path from 'path';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const GLOBALS = {
@@ -34,8 +33,6 @@ export default {
         // Minify JS
         new webpack.optimize.UglifyJsPlugin(),
 
-        new ExtractTextPlugin("styles.css"),
-
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             minify: {
@@ -62,10 +59,8 @@ export default {
             { test: /\.ttf(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=application/octet-stream' },
             { test: /\.svg(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=image/svg+xml' },
             { test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader?name=[name].[ext]' },
-            { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' }, {
-                test: /(\.css|\.scss)$/,
-                loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
-            }
+            { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
+            { test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] }
         ]
     }
 };
