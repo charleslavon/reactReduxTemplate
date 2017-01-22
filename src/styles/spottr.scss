@@ -1,13 +1,10 @@
 
 
-/* can probably delete these */
+/* can probably delete this */
 #wodAdd {
     display: none;
 }
 
-
-/* TODO need to set ServerURL:Port as SCSS variables
-  initialized with env system props*/
 
 /* Common Styles */
 
@@ -62,38 +59,6 @@ input[type=email] {
 }
 
 /* Targeted Styles */
-@media (max-width: 360px) and (device-height: 640px) { /* Galaxy s6 edge 360px x 640px */
-  body {
-    width: 352px; /*chrome's user-agent applys a 8px margin*/
-  }
-  .logo-large {
-    height: 124px;
-    z-index: -1;
-  }
-  .startpage .tagline {
-    position: absolute;
-    top: calc(352px/1.3);
-    left: 25%;
-  }
-  .login {
-    position: absolute;
-    bottom: 4%;
-  }
-  .login img {
-    height: 89px;
-    display: block;
-    margin: 30px auto 0px auto;
-  }
-  input[type=email] {
-    font-size: 30px;
-    width: 95%;
-  }
-  .banner-flag {
-    width: 95%;
-    top: calc(352px/2.8);
-    height: 20%;
-  }
-}
 
 @media(max-width: 414px) and (device-height: 736px) { /* iPhone 6 Plus */
   body {
@@ -129,6 +94,39 @@ input[type=email] {
     width: 34%;
     top: calc(736px/13);
     height: 8%;
+  }
+}
+
+@media (max-width: 360px) and (device-height: 640px) { /* Galaxy s6 edge 360px x 640px */
+  body {
+    width: 352px; /*chrome's user-agent applys a 8px margin*/
+  }
+  .logo-large {
+    height: 124px;
+    z-index: -1;
+  }
+  .startpage .tagline {
+    position: absolute;
+    top: calc(352px/1.3);
+    left: 25%;
+  }
+  .login {
+    position: absolute;
+    bottom: 4%;
+  }
+  .login img {
+    height: 89px;
+    display: block;
+    margin: 30px auto 0px auto;
+  }
+  input[type=email] {
+    font-size: 30px;
+    width: 95%;
+  }
+  .banner-flag {
+    width: 95%;
+    top: calc(352px/2.8);
+    height: 20%;
   }
 }
 
