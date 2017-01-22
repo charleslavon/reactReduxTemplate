@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <style>
+  /* Common Styles */
+  p {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 23px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    text-shadow: none;
+  }
+  .small-text {
+    display: block;
+    color: rgba(241, 235, 247, .4);
+  }
+  .highlight-text {
+    color: #f3b54b;
+    font-size: 20px;
+    line-height: 28px;
+    text-shadow: none;
+  }
+  .banner {
+    position: absolute;
+  }
+  ::-webkit-input-placeholder {
+     text-align: center;
+  }
+  .banner-flag {
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat, repeat;
+    background-attachment: scroll, scroll;
+  }
+  input[type=email] {
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 2px solid #abd6e7;
+    background-color: inherit;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    padding: 5px;
+    color: #abd6e7;
+    width: 95%;
+  }
+  div::-webkit-scrollbar {
+      display: none;
+  }
+  /* above styles are imported */
+
+  body {
+    width: 352px;
+    height: 640px;
+    background-color: white;
+  }
+  .header{
+      position: -webkit-sticky;
+      position: sticky;
+      top: 10px;
+  }
+  .frame {
+      top: 5px;
+  }
+  .main-view {
+    margin-top: 2px;
+    height: 535px;
+    overflow-y: scroll;
+  }
+  footer {
+    position: fixed;
+    height: 60px;
+    bottom: 2px;
+  }
+  img.logo {
+    width: 60px;
+  }
+  img.plus {
+    width: 60px;
+    padding: 0 80px 0 80px;
+  }
+  img.profile {
+    width: 60px;
+    float: right;
+  }
+  img.inbox {
+    float: right;
+    margin-top: -5px;
+    width: 40px;
+  }
+  </style>
+  <body>
+    <div class="frame">
+      <section class="header">
+        <img class="logo" src="images/spottr_logo.png" alt="spottr logo"/>
+        <img class="inbox" src="images/inbox_freepix.png" alt="inbox"/>
+      </section>
+      <div class="main-view">
+        
+      </div>
+      <footer>
+          <img class="logo" src="images/spottr_app_logo.png" alt="main view"/>
+          <img class="plus" src="images/plus_freepix.png" alt="add a workout"/>
+          <img class="profile" src="images/profile_freepix.png" alt="your profile"/>
+      </footer>
+    </div>
+  </body>
+</html>

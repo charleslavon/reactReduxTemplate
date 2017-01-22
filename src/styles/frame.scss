@@ -1,0 +1,40 @@
+div.frame {
+  width: 352px;
+  height: 640px;
+  background-color: white;
+
+  .header{
+      position: -webkit-sticky;
+      position: sticky;
+      top: 10px;
+  }
+  .frame {
+      top: 5px;
+  }
+  .main-view {
+    margin-top: 2px;
+    height: 535px;
+    overflow-y: scroll;
+  }
+  footer {
+    position: fixed;
+    height: 60px;
+    bottom: 2px;
+  }
+  img.logo {
+    width: 60px;
+  }
+  img.plus {
+    width: 60px;
+    padding: 0 80px 0 80px;
+  }
+  img.profile {
+    width: 60px;
+    float: right;
+  }
+  img.inbox {
+    float: right;
+    margin: -5px 8px 0 0;
+    width: 40px;
+  }
+}

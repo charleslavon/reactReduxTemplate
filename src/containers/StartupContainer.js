@@ -16,6 +16,7 @@ class StartupContainer extends React.Component {
     };
 
     this.handleFacebookResponse = this.handleFacebookResponse.bind(this);
+    this.handleGoNavigate = this.handleGoNavigate.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +29,10 @@ class StartupContainer extends React.Component {
 
   }
 
+  handleGoNavigate() {
+    console.log('pushing frame onto router');
+    this.context.router.push("frame");
+  }
 
   handleFacebookResponse(response) {
     // Send the token to the server and link the account
@@ -56,7 +61,9 @@ class StartupContainer extends React.Component {
 
   render() {
     return (
-        <Startup>
+        <Startup
+          clickGo={this.handleGoNavigate}
+        >
         {/*
           <FacebookLogin
             appId="610077532508385"
