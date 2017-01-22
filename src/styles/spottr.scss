@@ -34,16 +34,38 @@ p {
   line-height: 28px;
   text-shadow: none;
 }
-
+.banner {
+  position: absolute;
+}
+::-webkit-input-placeholder {
+   text-align: center;
+}
+.banner-flag {
+  position: absolute;
+  background-image: url(http://192.168.0.103:8080/images/spottr_banner.png), url(http://192.168.0.103:8080/images/footer_bg_slice.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat, repeat;
+  background-attachment: scroll, scroll;
+}
+input[type=email] {
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 2px solid #abd6e7;
+  background-color: inherit;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  padding: 5px;
+  color: #abd6e7;
+  width: 95%;
+}
 
 /* Targeted Styles */
 @media (max-width: 360px) {
   body {
     width: 352px; /*chrome's user-agent applys a 8px margin*/
 
-  }
-  .banner {
-    position: absolute;
   }
   .logo-large {
     height: 124px;
@@ -64,30 +86,50 @@ p {
     margin: 30px auto 0px auto;
   }
   input[type=email] {
-    border-top: 0px;
-    border-right: 0px;
-    border-left: 0px;
-    border-bottom: 2px solid #abd6e7;
-    background-color: inherit;
-    font-family: 'Open Sans', sans-serif;
     font-size: 30px;
-    padding: 5px;
-    color: #abd6e7;
     width: 95%;
   }
-  ::-webkit-input-placeholder {
-     text-align: center;
-  }
-
   .banner-flag {
-    position: absolute;
     width: 95%;
     top: calc(352px/2.8);
     height: 20%;
-    background-image: url(http://192.168.0.103:8080/images/spottr_banner.png), url(http://192.168.0.103:8080/images/footer_bg_slice.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat, repeat;
-    background-attachment: scroll, scroll;
+  }
+}
+
+
+@media(max-width: 320px) and (max-height: 568px) { /* iPhone 5 */
+  body {
+    width: 318px;
+  }
+  .logo-large {
+    height: 40px;
+    z-index: -1;
+  }
+  .highlight-text {
+    font-size: 10px;
+  }
+  .startpage .tagline {
+    position: absolute;
+    top: calc(568px/7);
+    left: 6%;
+  }
+  .login {
+    position: absolute;
+    top: calc(568px/4);
+    width: calc(320px/1.2);
+  }
+  .login img {
+    height: 25px;
+    display: block;
+    margin: 5px 15.6%;
+  }
+  input[type=email] {
+    font-size: 15px;
+    width: 35%;
+  }
+  .banner-flag {
+    width: 34%;
+    top: calc(568px/13);
+    height: 8%;
   }
 }
