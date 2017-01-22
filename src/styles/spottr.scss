@@ -10,6 +10,7 @@
   initialized with env system props*/
 
 /* Common Styles */
+
 body {
   background-color: #005176;
   width: 400px;
@@ -42,7 +43,6 @@ p {
 }
 .banner-flag {
   position: absolute;
-  background-image: url(http://192.168.0.103:8080/images/spottr_banner.png), url(http://192.168.0.103:8080/images/footer_bg_slice.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat, repeat;

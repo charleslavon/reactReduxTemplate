@@ -1,17 +1,21 @@
 import React, {PropTypes} from 'react';
 import logo from '../images/spottr_large.png';
 import go from'../images/go.png';
-import '../images/spottr_banner.png';
-import '../images/footer_bg_slice.png';
+import spotter_banner from '../images/spottr_banner.png';
+import footer_bg_slice from '../images/footer_bg_slice.png';
 
 const Startup = (props) => {
+  let bannerStyle = {
+    backgroundImage: 'url(spottr_banner.png), url(footer_bg_slice.png)'
+  };
+
   return(
     <div className="container">
       <div className="startpage">
         <section className="banner">
           <img className="logo-large" src={logo} alt="Spottr large logo"/>
         </section>
-        <section className="banner-flag"/>
+        <section className="banner-flag" style={bannerStyle}/>
         <section className="tagline">
           <p className="highlight-text">
             Fitness with a friend
