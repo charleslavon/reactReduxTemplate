@@ -12,6 +12,7 @@
 /* Common Styles */
 body {
   background-color: #005176;
+  width: 400px;
 }
 p {
   margin-top: 0px;
@@ -36,13 +37,13 @@ p {
 
 
 /* Targeted Styles */
-@media (max-width: 600px) {
+@media (max-width: 360px) {
   body {
-    width: 500px;
+    width: 352px; /*chrome's user-agent applys a 8px margin*/
+
   }
   .banner {
     position: absolute;
-    left: 10%;
   }
   .logo-large {
     height: 124px;
@@ -50,13 +51,12 @@ p {
   }
   .startpage .tagline {
     position: absolute;
-    top: calc(500px/1.5);
-    left: 28%;
+    top: calc(352px/1.3);
+    left: 25%;
   }
   .login {
     position: absolute;
     bottom: 4%;
-    left: 5%;
   }
   .login img {
     height: 89px;
@@ -70,10 +70,10 @@ p {
     border-bottom: 2px solid #abd6e7;
     background-color: inherit;
     font-family: 'Open Sans', sans-serif;
-    height: 45px;
     font-size: 30px;
     padding: 5px;
     color: #abd6e7;
+    width: 95%;
   }
   ::-webkit-input-placeholder {
      text-align: center;
@@ -81,11 +81,10 @@ p {
 
   .banner-flag {
     position: absolute;
-    width: 100%;
-    top: calc(500px/3.3);
+    width: 95%;
+    top: calc(352px/2.8);
     height: 20%;
-    margin-left: -8px;
-    background-image: url(http://localhost:8080/images/spottr_banner.png), url(http://localhost:8080/images/footer_bg_slice.png);
+    background-image: url(http://192.168.0.103:8080/images/spottr_banner.png), url(http://192.168.0.103:8080/images/footer_bg_slice.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat, repeat;
