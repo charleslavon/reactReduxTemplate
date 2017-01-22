@@ -26,6 +26,6 @@ export const saveAthlete = (name, email) => axios.post(server, `mutation {addAth
 
 
 export const getWorkouts = () => {
-  console.log("making request to " + server);
+  console.debug("making request to " + server);
   return axios.post(server, "query {workouts {id, description, author {id, name, email}, likes, comments {id, author {name}, comment}, attendees {id, name}}}");
-}
+};

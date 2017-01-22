@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/startupActions';
 import Startup from '../components/Startup';
-import FacebookLogin from 'react-fb-auth';
+//import FacebookLogin from 'react-fb-auth';
 import * as api from '../actions/spottrapi';
 
 class StartupContainer extends React.Component {
@@ -19,9 +19,15 @@ class StartupContainer extends React.Component {
   }
 
   componentDidMount() {
-    /* is invoked immediately after a component is mounted. Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request. Setting state in this method will trigger a re-rendering.
+    /* is invoked immediately after a component is mounted.
+      Initialization that requires DOM nodes should go here.
+      If you need to load data from a remote endpoint, this is a good place
+      to instantiate the network request. Setting state in this method will
+       trigger a re-rendering.
     */
+
   }
+
 
   handleFacebookResponse(response) {
     // Send the token to the server and link the account
