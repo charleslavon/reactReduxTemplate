@@ -18,7 +18,7 @@ const WorkoutFrame = props => {
         {props.children}
       </div>
       <footer>
-          <img className="logo" src={app_logo} alt="main view"/>
+          <img className="app-logo" src={app_logo} alt="main view"/>
           <img className="plus" src={plus} alt="add a workout"/>
           <img className="profile" src={profile} alt="your profile"/>
       </footer>

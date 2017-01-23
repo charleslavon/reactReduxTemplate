@@ -12,7 +12,6 @@ const Startup = (props) => {
     backgroundImage: 'url(spottr_banner.png), url(footer_bg_slice.png)'
   };
   let containerStyle = {
-    height: "640px",
     backgroundColor: "#005176"
   }
 $('body').addClass('bg_color');

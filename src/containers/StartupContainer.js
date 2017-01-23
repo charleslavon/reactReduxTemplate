@@ -30,7 +30,6 @@ class StartupContainer extends React.Component {
   }
 
   handleGoNavigate() {
-    console.log('pushing frame onto router');
     this.context.router.push("frame");
   }
 
