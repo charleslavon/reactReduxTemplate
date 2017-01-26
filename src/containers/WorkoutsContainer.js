@@ -3,10 +3,11 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/wodActions';
 import HomePage from '../components/HomePage';
+import AppFrame from '../components/AppFrame';
 import * as api from '../actions/spottrapi';
 
 
-class HomePageContainer extends React.Component {
+class WorkoutsContainer extends React.Component {
 
   constructor(props){
     super(props);
@@ -43,18 +44,20 @@ class HomePageContainer extends React.Component {
 
   render() {
     return (
-      <HomePage
-        onSave={this.props.actions.saveWod}
-        addAttendee={this.props.actions.addAttendee}
-        likeWod={this.props.actions.likeWod}
-        addComment={this.props.actions.addComment}
-        wods={this.state.wods}
-      />
+      <AppFrame>
+        <HomePage
+          onSave={this.props.actions.saveWod}
+          addAttendee={this.props.actions.addAttendee}
+          likeWod={this.props.actions.likeWod}
+          addComment={this.props.actions.addComment}
+          wods={this.state.wods}
+        />
+      </AppFrame>
     );
   }
 }
 
-HomePageContainer.propTypes = {
+WorkoutsContainer.propTypes = {
   actions: PropTypes.object.isRequired,
   wods: PropTypes.array.isRequired
 };
@@ -74,4 +77,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomePageContainer);
+)(WorkoutsContainer);

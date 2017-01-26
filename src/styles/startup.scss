@@ -46,7 +46,7 @@ input[type=email] {
 }
 
 /* Targeted Styles */
-@media(max-width: 414px) and (device-height: 736px) { /* iPhone 6 Plus */
+@media(max-width: 414px) and (device-height: 736px) { /* iPhone 6+, 7+ */
   .logo-large {
     width: 98%;
     z-index: -1;
@@ -110,7 +110,7 @@ input[type=email] {
   }
 }
 
-@media(max-width: 380px) and (device-height: 667px) { /* iPhone 6 */
+@media(max-width: 380px) and (device-height: 667px) { /* iPhone 6, 7 */
   .logo-large {
     height: 138px;
     z-index: -1;

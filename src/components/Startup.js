@@ -1,5 +1,4 @@
 import React, {PropTypes} from 'react';
-import Link from 'react-router';
 import logo from '../images/spottr_large.png';
 import go from'../images/go.png';
 import spotter_banner from '../images/spottr_banner.png';

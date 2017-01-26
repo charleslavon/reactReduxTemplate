@@ -7,7 +7,7 @@ import inbox from '../images/inbox_freepix.png';
 import '../styles/spottr.scss';
 import '../styles/frame.scss';
 
-const WorkoutFrame = props => {
+const AppFrame = props => {
   return(
     <div className="frame">
       <section className="header">
@@ -26,8 +26,8 @@ const WorkoutFrame = props => {
   );
 };
 
-WorkoutFrame.propTypes = {
+AppFrame.propTypes = {
 
 };
 
-export default WorkoutFrame;
+export default AppFrame;

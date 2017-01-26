@@ -30,7 +30,7 @@ class StartupContainer extends React.Component {
   }
 
   handleGoNavigate() {
-    this.context.router.push("frame");
+    this.context.router.push("wods");
   }
 
   handleFacebookResponse(response) {
