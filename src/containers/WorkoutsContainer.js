@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/wodActions';
-import HomePage from '../components/HomePage';
+import WodDisplay from '../components/WodDisplay';
 import AppFrame from '../components/AppFrame';
 import * as api from '../actions/spottrapi';
 
@@ -45,13 +45,21 @@ class WorkoutsContainer extends React.Component {
   render() {
     return (
       <AppFrame>
-        <HomePage
+
+      {this.state.wods.map(wod =>
+        <WodDisplay key={wod.id} addAttendee={this.props.actions.addAttendee}
+          location={wod.location} author={wod.author} id={wod.id}
+          date={wod.date} likes={wod.likes} comments={wod.comments}
+          attendees={wod.attendees} description={wod.description}
+          likeWod={this.props.actions.likeWod} addComment={this.props.actions.addComment} />
+      )}
+      {/*  <HomePage
           onSave={this.props.actions.saveWod}
           addAttendee={this.props.actions.addAttendee}
           likeWod={this.props.actions.likeWod}
           addComment={this.props.actions.addComment}
           wods={this.state.wods}
-        />
+        /> */}
       </AppFrame>
     );
   }

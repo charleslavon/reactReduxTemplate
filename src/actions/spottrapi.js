@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const server = process.env.SPOTTR_SERVER || "http://server.spottr.fit/spottrql";
+const server = process.env.SPOTTR_SERVER || "http://clg.local.com:4000/spottrql";
 
 
 axios.defaults.headers.post['Content-Type'] = "application/graphql";
