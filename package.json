@@ -10,7 +10,7 @@
     "npm": "3.10.3"
   },
   "scripts": {
-    "prestart": "npm run buildonly",
+    "prestart": "npm-run-all --parallel bowerInstall buildonly",
     "start": "./node_modules/.bin/babel-node productionRequire.js",
     "start-message": "./node_modules/.bin/babel-node tools/startMessage.js",
     "prestartdev": "npm-run-all --parallel start-message",
@@ -23,7 +23,7 @@
     "open:dist": "./node_modules/.bin/babel-node tools/distServer.js",
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run clean-dist && npm run lint && npm run test",
-    "build": "npm run buildonly bowerInstall",
+    "build": "npm run buildonly",
     "buildonly": "./node_modules/.bin/babel-node tools/build.js",
     "buildAndRun": "./node_modules/.bin/babel-node tools/build.js && npm run open:dist",
     "testonly": "./node_modules/.bin/_mocha $npm_package_options_mocha",
