@@ -6,6 +6,12 @@ const PORT = process.env.PORT;
 
 app.use(Express.static('dist'));
 
+app.get('/bower_components/polymer/{filename}', (req, res) => {
+    res.render(`dist/bower_components/polymer/${filename}.html`);
+});
+app.get('/bower_components/iron-{type}/{filename}', (req, res) => {
+    res.render(`dist/bower_components/iron-${type}/${filename}.html`);
+});
 app.get('/', (req, res) => {
   res.render('dist/index.html');
 });

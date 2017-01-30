@@ -4,6 +4,7 @@ logs
 
 # Dependencies
 node_modules
+bower_components
 src/node
 node
 

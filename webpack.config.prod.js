@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify('production'),
@@ -48,7 +49,13 @@ export default {
                 minifyURLs: true
             },
             inject: true
-        })
+        }),
+        new CopyWebpackPlugin(
+            [   {from:'bower_components/iron-*/*.html'},
+                {from:'bower_components/iron-icons/*.html'},
+                {from:'bower_components/polymer/*.html'}
+            ]
+        )
     ],
     module: {
         loaders: [

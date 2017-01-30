@@ -1,0 +1,26 @@
+{
+  "name": "spottr-ui",
+  "description": "Mobile optmized UI for spottr MVP. Targeting Google chrome  on Galaxy S6Edge",
+  "main": "index.js",
+  "authors": [
+    "Charles"
+  ],
+  "license": "UNLICENSED",
+  "keywords": [
+    "spottr",
+    "fitness",
+    "mvp"
+  ],
+  "homepage": "https://github.com/charleslavon/spottr-ui",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-icons": "^1.2.0"
+  }
+}

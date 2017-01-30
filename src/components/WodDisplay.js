@@ -16,13 +16,13 @@ const WodDisplay = props => {
                 {/* fotos and videos here */}
             </section>
             <section className="footer">
-                <div>
+                <div className="attendees">
                     <iron-icon icon="social:person-outline"/>
                 </div>
-                <div>
-                    <iron-icon icon="communication:chat-bubble-outline"/>
+                <div className="chat">
+                    <iron-icon  icon="communication:chat-bubble-outline"/>
                 </div>
-                <div>
+                <div className="share">
                     <iron-icon icon="social:share"/>
                 </div>
             </section>

@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
-
+<script>
+        function handleLoad(e) {
+        console.log('Loaded import: ' + e.target.href);
+    }
+        function handleError(e) {
+        console.log('Error loading import: ' + e.target.href);
+    }
+</script>
 <head>
     <title> Spottr </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="import" onload="handleLoad(event)" onerror="handleError(event)"
+          href="/bower_components/iron-icons/social-icons.html"/>
+    <link onload="handleLoad(event)" onerror="handleError(event)"
+          rel="import" href="/bower_components/iron-icons/communication-icons.html"/>
 </head>
+
+</script>
 
 <body>
     <div id="app" class="container"></div>

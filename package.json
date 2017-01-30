@@ -13,7 +13,7 @@
     "prestart": "npm run buildonly",
     "start": "./node_modules/.bin/babel-node productionRequire.js",
     "start-message": "./node_modules/.bin/babel-node tools/startMessage.js",
-    "prestartdev": "npm-run-all --parallel start-message remove-dist",
+    "prestartdev": "npm-run-all --parallel start-message",
     "startdev": "npm-run-all --parallel prestartdev test:watch open:src",
     "lint": "esw webpack.config.* src tools --color --ignore-pattern node_modules; exit 0;",
     "lint:watch": "esw webpack.config.* src tools --color --ignore-pattern node_modules --watch",
@@ -83,6 +83,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "copy-webpack-plugin": "^4.0.1",
     "deep-freeze": "0.0.1",
     "enzyme": "^2.5.1",
     "eslint": "^3.8.1",
