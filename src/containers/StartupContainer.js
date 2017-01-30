@@ -33,6 +33,7 @@ class StartupContainer extends React.Component {
     this.context.router.push("wods");
   }
 
+
   handleFacebookResponse(response) {
     // Send the token to the server and link the account
     console.log(response);

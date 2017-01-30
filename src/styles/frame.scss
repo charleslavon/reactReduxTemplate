@@ -2,6 +2,11 @@
   overflow-y: scroll;
   width: inherit;
 }
+
+footer {
+  background-color: white;
+}
+
 /* Targeted Styles */
 @media(max-width: 414px) and (device-height: 736px) { /* iPhone 6+, 7+ */
   $width: 396px;
@@ -21,7 +26,7 @@
     }
     .main-view {
       margin-top: 2px;
-      height: 535px;
+      height: 600px;
     }
     footer {
       position: fixed;
@@ -68,7 +73,7 @@
     }
     .main-view {
       margin-top: 2px;
-      height: 535px;
+      height: 520px;
     }
     footer {
       position: fixed;

@@ -12,7 +12,7 @@ const Startup = (props) => {
   };
   let containerStyle = {
     backgroundColor: "#005176"
-  }
+  };
 $('body').addClass('bg_color');
   return(
     <div className="container" style={containerStyle}>

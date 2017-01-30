@@ -11,6 +11,8 @@ node
 dist
 target
 
+# IDE project configs
+.idea/
 
 # Mac files
 .DS_Store
