@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <script>
-        function handleLoad(e) {
-        console.log('Loaded import: ' + e.target.href);
+    function handleLoad(e) {
+        console.debug('Loaded import: ' + e.target.href);
     }
-        function handleError(e) {
+    function handleError(e) {
         console.log('Error loading import: ' + e.target.href);
+    }
+    if(screen.width > 415) {
+            window.location = "http://www.spottr.fit";
     }
 </script>
 <head>
