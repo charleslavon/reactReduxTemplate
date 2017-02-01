@@ -1,8 +1,11 @@
 import React from 'react';
 import '../styles/workouts.scss';
+import uuid from 'uuid';
 
 const WodDisplay = props => {
 
+    let attendeesIconId = uuid.v1();
+    let chatIconId = uuid.v1();
     return (
         <article>
             <section className="header">
@@ -17,10 +20,13 @@ const WodDisplay = props => {
             </section>
             <section className="footer">
                 <div className="attendees">
-                    <iron-icon icon="social:person-outline"/>
+                    <iron-icon id="attendeesIconId" icon="social:person-outline"/>
+                    <paper-badge class="attendees" for={attendeesIconId} label="1"></paper-badge>
                 </div>
                 <div className="chat">
-                    <iron-icon  icon="communication:chat-bubble-outline"/>
+                    <iron-icon id="chatIconId" icon="communication:chat-bubble-outline"/>
+                    <paper-badge icon="social:mood" class="chat" for={chatIconId} label="happy">
+                    </paper-badge>
                 </div>
                 <div className="share">
                     <iron-icon icon="social:share"/>

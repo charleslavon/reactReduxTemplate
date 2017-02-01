@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default {
     debug: true,
@@ -35,7 +36,15 @@ export default {
                 collapseWhitespace: true
             },
             inject: true
-        })
+        }),
+        new CopyWebpackPlugin(
+            [   {from:'bower_components/iron-*/*.html'},
+                {from:'bower_components/iron-icons/*.html'},
+                {from:'bower_components/paper-*/*.html'},
+                {from:'bower_components/font-*/*.html'},
+                {from:'bower_components/polymer/*.html'}
+            ]
+        )
     ],
     module: {
         loaders: [

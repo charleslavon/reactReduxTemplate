@@ -20,7 +20,7 @@ div.workouts { /* Default settings per Galaxy s6 edge 360px x 640px */
     }
   }
   .description {
-    height: 100px;
+    height: 70px;
     background-color: rgba(174, 214, 232, 0.3);
     border: 1px solid white;
     padding: 3px 2px 0 3px;
@@ -28,6 +28,16 @@ div.workouts { /* Default settings per Galaxy s6 edge 360px x 640px */
   .carousel {
     height: 332px;
     background-color: blueviolet;
+  }
+
+  paper-badge.attendees {
+    left: 36px !important;
+    top: -9px !important;
+  }
+
+  paper-badge.chat {
+    left: 174px !important;
+    top: -41px !important;
   }
 
 
@@ -59,7 +69,7 @@ div.workouts { /* Default settings per Galaxy s6 edge 360px x 640px */
     .share {
       position: relative;
       float: right;
-      top: -33px;
+      top: -54px;
     }
   }
 }
