@@ -25,8 +25,8 @@ class WorkoutsContainer extends React.Component {
       this.state = {
           wods: [{
               "id": "80313a89-76ab-4528-b74a-3b0bd687a7ca",
-              "description": "Headed to La Huella around 11am today. Feeling like working on my oly form or maybe I'll do one of the workouts from crossfit invictus.",
-              "author": "Kelsey M.",
+              "description": "Headed to La Huella around 11am today. Feeling like practicing muscleups or maybe I'll do one of the workouts from crossfit invictus. Who's coming with?",
+              "author": "Charles G.",
               "likes": 2,
               "comments": [{ "author": "Charles", "comment": "Sweet. I'll be there around 11:30" },
                   { "author": "Renee Forest", "comment": "ahh..Wish I could join but I've gotta work today. Next time!" }
@@ -37,7 +37,8 @@ class WorkoutsContainer extends React.Component {
                   "longitude": 2.179704,
                   "id": 1,
                   "name": "Poble Nou crossfit"
-              }]},
+              }],
+                "images": ["user1_1", "user1_2"]},
               {
                   "id": "80313a89-ab-4528-b74a-3b0bd687a7ca",
                   "description": "I need some cardio! Gotta burn off all those gintonics from saturday night. Who's up for sprints along the beach??.",
@@ -52,7 +53,8 @@ class WorkoutsContainer extends React.Component {
                       "longitude": 2.179704,
                       "id": 11,
                       "name": "Barceloneta"
-                  }]},
+                  }],
+                  "images": ["beach", "filler", "filler"]},
               {
                   "id": "813a89-76ab-4528-b74a-3b0bd687a7ca",
                   "description": "He de madrugar mañana. Vamos a la clase a las 7:00h :).",
@@ -65,7 +67,8 @@ class WorkoutsContainer extends React.Component {
                       "longitude": 2.179704,
                       "id": 1,
                       "name": "Poble Nou crossfit"
-                  }]
+                  }],
+                  "images": []
               }]
       }
   }
@@ -98,6 +101,7 @@ class WorkoutsContainer extends React.Component {
                               location={wod.location} author={wod.author} id={wod.id}
                               date={wod.date} likes={wod.likes} comments={wod.comments}
                               attendees={wod.attendees} description={wod.description}
+                              images={wod.images}
                               likeWod={this.props.actions.likeWod} addComment={this.props.actions.addComment} />
               )}
 

@@ -15,7 +15,7 @@ const WodDisplay = props => {
             </section>
             <section className="carousel">
                 {/* fotos and videos here */}
-                <PhotoCarousel></PhotoCarousel>
+                <PhotoCarousel images={props.images}></PhotoCarousel>
             </section>
             <section className="footer">
                 <div className="attendees">
