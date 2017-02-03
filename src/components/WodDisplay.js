@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/workouts.scss';
 import uuid from 'uuid';
+import FotoCarousel from './FotoCarousel';
 
 const WodDisplay = props => {
 
@@ -17,6 +18,7 @@ const WodDisplay = props => {
             </section>
             <section className="carousel">
                 {/* fotos and videos here */}
+                <FotoCarousel></FotoCarousel>
             </section>
             <section className="footer">
                 <div className="attendees">

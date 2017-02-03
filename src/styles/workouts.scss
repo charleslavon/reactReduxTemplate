@@ -30,6 +30,12 @@ div.workouts { /* Default settings per Galaxy s6 edge 360px x 640px */
     background-color: blueviolet;
   }
 
+  input[type=file] {
+    height: 332px;
+    width: 100%;
+    background: url('images/camera_upload_freepix.svg');
+  }
+
   .footer {
     bottom: 0;
     position: relative;
@@ -90,6 +96,7 @@ div.workouts { /* Default settings per Galaxy s6 edge 360px x 640px */
     left: 174px !important;
     top: -41px !important;
   }
+
 }
 
 @media(max-width: 380px) and (device-height: 667px) { /* iPhone 6 */
