@@ -27,7 +27,7 @@ div.workouts { /* Default settings per Galaxy s6 edge 360px x 640px */
   }
   .carousel {
     height: 332px;
-    overflow: hidden;
+    overflow-x: scroll;
     width: 100%;
   }
   ul {
@@ -40,16 +40,10 @@ div.workouts { /* Default settings per Galaxy s6 edge 360px x 640px */
   .panes {
     list-style: none;
     position: relative;
-    overflow: hidden; /* to clear floats */
+    overflow-x: scroll;
     width: 500%; /* # of panes * 100 */
-    -webkit-animation:  30s linear 0s infinite alternate carousel;
-    -o-animation:  30s linear 0s infinite alternate carousel;
-    animation:  30s linear 0s infinite alternate carousel;
+
   }
-  @-webkit-keyframes carousel { from { margin-left: 0%; } to { margin-left:-400%; }  }
-  @-moz-keyframes carousel { from { margin-left: 0%; } to { margin-left:-400%; }  }
-  @-o-keyframes carousel { from { margin-left: 0%; } to { margin-left:-400%; }  }
-  @keyframes carousel { from { margin-left: 0%; } to { margin-left:-400%; }  }
 
   .panes > li{
     position:relative;
