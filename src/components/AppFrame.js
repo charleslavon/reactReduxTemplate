@@ -9,7 +9,7 @@ import '../styles/frame.scss';
 const AppFrame = props => {
     return (
         <div className="frame">
-            <link onload="handleLoad(event)" onerror="handleError(event)"
+            <link onLoad={() => handleLoad(event)} onError={() => handleError(event)}
                   rel="import" href="/bower_components/paper-badge/paper-badge.html"/>
             <section className="header">
                 <img className="logo" src={spottr_logo} alt="spottr logo"/>
