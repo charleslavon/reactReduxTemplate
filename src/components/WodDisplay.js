@@ -1,12 +1,9 @@
 import React from 'react';
 import '../styles/workouts.scss';
-import uuid from 'uuid';
-import FotoCarousel from './FotoCarousel';
+import PhotoCarousel from './PhotoCarousel';
 
 const WodDisplay = props => {
 
-    let attendeesIconId = uuid.v1();
-    let chatIconId = uuid.v1();
     return (
         <article>
             <section className="header">
@@ -18,16 +15,16 @@ const WodDisplay = props => {
             </section>
             <section className="carousel">
                 {/* fotos and videos here */}
-                <FotoCarousel></FotoCarousel>
+                <PhotoCarousel></PhotoCarousel>
             </section>
             <section className="footer">
                 <div className="attendees">
                     <iron-icon id="attendeesIconId" icon="social:person-outline"/>
-                    <paper-badge class="attendees" for={attendeesIconId} label="1"></paper-badge>
+                    <paper-badge class="attendees" for="attendeesIconId" label="1"></paper-badge>
                 </div>
                 <div className="chat">
                     <iron-icon id="chatIconId" icon="communication:chat-bubble-outline"/>
-                    <paper-badge icon="social:mood" class="chat" for={chatIconId} label="happy">
+                    <paper-badge icon="social:mood" class="chat" for="chatIconId" label="happy">
                     </paper-badge>
                 </div>
                 <div className="share">

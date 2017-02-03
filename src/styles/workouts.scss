@@ -27,13 +27,46 @@ div.workouts { /* Default settings per Galaxy s6 edge 360px x 640px */
   }
   .carousel {
     height: 332px;
-    background-color: blueviolet;
+    overflow: hidden;
+    width: 100%;
+  }
+  ul {
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+  }
+  .panes {
+    list-style: none;
+    position: relative;
+    overflow: hidden; /* to clear floats */
+    width: 500%; /* # of panes * 100 */
+    -webkit-animation:  30s linear 0s infinite alternate carousel;
+    -o-animation:  30s linear 0s infinite alternate carousel;
+    animation:  30s linear 0s infinite alternate carousel;
+  }
+  @-webkit-keyframes carousel { from { margin-left: 0%; } to { margin-left:-400%; }  }
+  @-moz-keyframes carousel { from { margin-left: 0%; } to { margin-left:-400%; }  }
+  @-o-keyframes carousel { from { margin-left: 0%; } to { margin-left:-400%; }  }
+  @keyframes carousel { from { margin-left: 0%; } to { margin-left:-400%; }  }
+
+  .panes > li{
+    position:relative;
+    float:left;
+    width:20%; /* 100 / number of panes */
+  }
+  .carousel img{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height: 332px;
   }
 
   input[type=file] {
     height: 332px;
     width: 100%;
-    background: url('images/camera_upload_freepix.svg');
+    background: no-repeat center/50% url('../images/camera_upload_freepix.svg');
   }
 
   .footer {
