@@ -2,11 +2,23 @@
   overflow-y: scroll;
   overflow-x: hidden;
   width: inherit;
+  margin-top: 5px;
   height: 100%;
 }
 
 img.app-logo {
   width: 30px;
+}
+
+.header{
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 100;
+  background-color: white;
+}
+
+.frame {
+  top: 5px;
 }
 
 
@@ -19,17 +31,6 @@ img.app-logo {
     height: 640px;
     background-color: white;
 
-    .header{
-        position: -webkit-sticky;
-        position: sticky;
-        top: 10px;
-    }
-    .frame {
-        top: 5px;
-    }
-    .main-view {
-      margin-top: 2px;
-    }
     img.logo {
       width: 90px;
     }
@@ -59,17 +60,6 @@ img.app-logo {
     height: 640px;
     background-color: white;
 
-    .header{
-        position: -webkit-sticky;
-        position: sticky;
-        top: 10px;
-    }
-    .frame {
-        top: 5px;
-    }
-    .main-view {
-      margin-top: 2px;
-    }
     img.logo {
       width: 60px;
     }
@@ -100,17 +90,6 @@ img.app-logo {
     height: 640px;
     background-color: white;
 
-    .header{
-        position: -webkit-sticky;
-        position: sticky;
-        top: 10px;
-    }
-    .frame {
-        top: 5px;
-    }
-    .main-view {
-      margin-top: 2px;
-    }
     img.logo {
       width: 60px;
     }
@@ -141,17 +120,6 @@ img.app-logo {
     height: 568px;
     background-color: white;
 
-    .header{
-        position: -webkit-sticky;
-        position: sticky;
-        top: 10px;
-    }
-    .frame {
-        top: 5px;
-    }
-    .main-view {
-      margin-top: 2px;
-    }
     img.logo {
       width: 60px;
     }
@@ -182,17 +150,6 @@ img.app-logo {
     height: 640px;
     background-color: white;
 
-    .header{
-        position: -webkit-sticky;
-        position: sticky;
-        top: 10px;
-    }
-    .frame {
-        top: 5px;
-    }
-    .main-view {
-      margin-top: 2px;
-    }
     img.logo {
       width: 60px;
     }

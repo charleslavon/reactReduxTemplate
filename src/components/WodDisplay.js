@@ -6,7 +6,7 @@ const WodDisplay = props => {
 
     return (
         <article>
-            <section className="header">
+            <section>
                 {props.author}
                 <span>hace 4 horas</span>
             </section>
