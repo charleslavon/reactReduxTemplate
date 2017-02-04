@@ -2,11 +2,13 @@
   overflow-y: scroll;
   overflow-x: hidden;
   width: inherit;
+  height: 100%;
 }
 
-footer {
-  background-color: white;
+img.app-logo {
+  width: 30px;
 }
+
 
 /* Targeted Styles */
 @media(max-width: 414px) and (device-height: 736px) { /* iPhone 6+, 7+ */
@@ -27,33 +29,22 @@ footer {
     }
     .main-view {
       margin-top: 2px;
-      height: 600px;
-    }
-    footer {
-      position: fixed;
-      height: 60px;
-      bottom: 2px;
-    }
-    img.app-logo {
-      width: 50px;
     }
     img.logo {
       width: 90px;
     }
     img.plus {
-      width: 50px;
-      padding: 0 125px;
+      width: 30px;
+      margin: 0 12%;
     }
     img.profile {
-      width: 50px;
-      float: right;
-      position: absolute;
-      bottom: 7px;
+      width: 30px;
+      margin: 0 12%;
     }
     img.inbox {
       float: right;
-      margin: -10px 3px 0 0;
-      width: 40px;
+      margin: -2px 3px 0 0;
+      width: 37px;
     }
     paper-badge.inbox {
       top: 3px !important;
@@ -78,31 +69,22 @@ footer {
     }
     .main-view {
       margin-top: 2px;
-      height: 520px;
-    }
-    footer {
-      position: fixed;
-      height: 53px;
-      bottom: 2px;
-    }
-    img.app-logo {
-      width: 50px;
     }
     img.logo {
       width: 60px;
     }
     img.plus {
-      width: 50px;
-      padding: 0 97px;
+      width: 25px;
+      margin: 0 13%;
     }
     img.profile {
-      width: 50px;
-      float: right;
+      width: 25px;
+      margin: 0 13%;
     }
     img.inbox {
       float: right;
-      margin: -5px 12px 0 0;
-      width: 30px;
+      margin: -4px 12px 0 0;
+      width: 33px;
     }
 
     paper-badge.inbox {
@@ -128,33 +110,21 @@ footer {
     }
     .main-view {
       margin-top: 2px;
-      height: 535px;
-    }
-    footer {
-      position: fixed;
-      height: 62px;
-      bottom: 2px;
-    }
-    footer img {
-      width: 70px;
-    }
-    img.app-logo {
-      width: 50px;
     }
     img.logo {
-      width: 50px;
+      width: 60px;
     }
     img.plus {
-      width: 50px;
-      padding: 0 106px;
+      width: 25px;
+      margin: 0 14%;
     }
     img.profile {
-      width: 50px;
-      float: right;
+      width: 25px;
+      margin: 0 14%;
     }
     img.inbox {
       float: right;
-      margin: -5px 12px 0 0;
+      margin: -2px 12px 0 0;
       width: 30px;
     }
 
@@ -181,33 +151,21 @@ footer {
     }
     .main-view {
       margin-top: 2px;
-      height: 478px;
-    }
-    footer {
-      position: fixed;
-      height: 63px;
-      bottom: 2px;
-    }
-    footer img {
-      width: 50px;
-    }
-    img.app-logo {
-      width: 45px;
     }
     img.logo {
-      width: 50px;
+      width: 60px;
     }
     img.plus {
-      padding: 0 84px;
-      width: 45px;
+      width: 25px;
+      margin: 0 12%;
     }
     img.profile {
-      float: right;
-      width: 45px;
+      width: 25px;
+      margin: 0 12%;
     }
     img.inbox {
       float: right;
-      margin: -5px 4px 0 0;
+      margin: -2px 4px 0 0;
       width: 30px;
     }
     paper-badge.inbox {
@@ -234,33 +192,21 @@ footer {
     }
     .main-view {
       margin-top: 2px;
-      height: 535px;
-    }
-    footer {
-      position: fixed;
-      height: 50px;
-      bottom: 2px;
-    }
-    footer img {
-      width: 50px;
-    }
-    img.app-logo {
-      width: 38px;
     }
     img.logo {
-      width: 50px;
+      width: 60px;
     }
     img.plus {
-      padding: 0 93px;
-      width: 40px;
+      width: 25px;
+      margin: 0 12%;
     }
     img.profile {
-      float: right;
-      width: 40px;
+      width: 25px;
+      margin: 0 12%;
     }
     img.inbox {
       float: right;
-      margin: -5px 4px 0 0;
+      margin: -2px 4px 0 0;
       width: 30px;
     }
     paper-badge.inbox {
