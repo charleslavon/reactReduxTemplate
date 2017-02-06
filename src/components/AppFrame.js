@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 import spottr_logo from '../images/spottr_logo.png';
 import plus from '../images/plus_freepix.png';
 import profile from '../images/profile_freepix.png';
@@ -11,11 +12,15 @@ const AppFrame = props => {
             <link onLoad={() => handleLoad(event)} onError={() => handleError(event)}
                   rel="import" href="/bower_components/paper-badge/paper-badge.html"/>
             <section className="header">
-                <img className="logo" src={spottr_logo} alt="spottr logo"/>
+                <Link to="wods">
+                    <img className="logo" src={spottr_logo} alt="spottr logo"/>
+                </Link>
                 <img className="plus" src={plus} alt="add a workout event"/>
                 <img className="profile" src={profile} alt="your profile"/>
-                <img className="inbox" id="inbox" src={inbox} alt="inbox"/>
-                <paper-badge class="inbox" for="inbox" label="4"></paper-badge>
+                <Link to="inbox">
+                    <img className="inbox" id="inbox" src={inbox} alt="inbox"/>
+                </Link>
+                <paper-badge class="inbox" for="inbox" label="4"/>
             </section>
             <div className="main-view">
                 {props.children}
@@ -24,6 +29,8 @@ const AppFrame = props => {
     );
 };
 
-AppFrame.propTypes = {};
+AppFrame.propTypes = {
+    children: React.PropTypes.arrayOf(React.PropTypes.object)
+};
 
 export default AppFrame;

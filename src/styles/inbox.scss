@@ -1,0 +1,23 @@
+section.message-summary {
+
+
+  margin-top: .5em;
+  height: 3em;
+  width: 96%;
+  padding: 3px;
+  border: 1px solid rgba(239, 189, 95, 0.3);
+
+  .iron-icon-0 {
+    height: 32px;
+    width: 32px;
+    fill: #aed6e8;
+  }
+  .with {
+    padding-left: 5%;
+  }
+  span.hace {
+    font-size: .7em;
+    float: right;
+    position: relative;
+  }
+}
