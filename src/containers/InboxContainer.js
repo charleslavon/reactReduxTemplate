@@ -1,6 +1,6 @@
 import React from 'react';
-import AppFrame from '../components/AppFrame';
 import MessageSummary from '../components/MessageSummary';
+import Message from '../components/Message';
 
 class InboxContainer extends React.Component {
 
@@ -25,14 +25,25 @@ class InboxContainer extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return (
-            <AppFrame>
-                {this.state.convos.map(conversation =>
-                    <MessageSummary
-                        with={conversation.with}
-                        sent={conversation.sent}/>
+            <div>
+            {this.props.children ?
+                (
+                    <Message
+                        id={this.props.params.id}
+                    />
+                ) : (
+                    <div>
+                        {this.state.convos.map(conversation =>
+                            <MessageSummary
+                                id={conversation.id}
+                                with={conversation.with}
+                                sent={conversation.sent}/>
+                        )}
+                    </div>
                 )}
-            </AppFrame>
+            </div>
         );
     }
 }

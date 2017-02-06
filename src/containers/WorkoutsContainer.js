@@ -94,7 +94,6 @@ class WorkoutsContainer extends React.Component {
 
   render() {
     return (
-      <AppFrame>
           <div className="workouts">
               {this.state.wods.map(wod =>
                   <WodDisplay key={wod.id} addAttendee={this.props.actions.addAttendee}
@@ -105,15 +104,14 @@ class WorkoutsContainer extends React.Component {
                               likeWod={this.props.actions.likeWod} addComment={this.props.actions.addComment} />
               )}
 
+              {/*  <HomePage
+               onSave={this.props.actions.saveWod}
+               addAttendee={this.props.actions.addAttendee}
+               likeWod={this.props.actions.likeWod}
+               addComment={this.props.actions.addComment}
+               wods={this.state.wods}
+               /> */}
           </div>
-      {/*  <HomePage
-          onSave={this.props.actions.saveWod}
-          addAttendee={this.props.actions.addAttendee}
-          likeWod={this.props.actions.likeWod}
-          addComment={this.props.actions.addComment}
-          wods={this.state.wods}
-        /> */}
-      </AppFrame>
     );
   }
 }

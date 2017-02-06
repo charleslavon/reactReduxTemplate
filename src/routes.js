@@ -2,6 +2,8 @@ import React from 'react';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 import App from './components/App';
+import AppFrame from './components/AppFrame';
+import Message from './components/Message';
 import WorkoutsContainer from './containers/WorkoutsContainer';
 import StartupContainer from './containers/StartupContainer';
 import InboxContainer from './containers/InboxContainer';
@@ -11,8 +13,13 @@ export default (
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={StartupContainer}/>
-            <Route path="wods" component={WorkoutsContainer}/>
-            <Route path="inbox" component={InboxContainer}/>
+            <Route component={AppFrame}>
+                <Route path="wods" component={WorkoutsContainer}/>
+                <Route path="inbox" component={InboxContainer}/>
+                <Route path="inbox(/:id)" component={InboxContainer}>
+                    <IndexRoute component={Message}/>
+                </Route>
+            </Route>
             <Route path="*" component={NotFoundPage}/>
         </Route>
     </Router>

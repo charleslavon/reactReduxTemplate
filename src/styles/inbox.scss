@@ -7,6 +7,11 @@ section.message-summary {
   padding: 3px;
   border: 1px solid rgba(239, 189, 95, 0.3);
 
+  a:-webkit-any-link {
+    color: inherit;
+    cursor: none;
+    text-decoration: none;
+  }
   .iron-icon-0 {
     height: 32px;
     width: 32px;

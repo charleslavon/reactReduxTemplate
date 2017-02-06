@@ -6,7 +6,7 @@ const MessageSummary = props => {
 
     return (
         <section className="message-summary">
-            <Link>
+            <Link to={"inbox/"+props.id}>
                 <article className="convoLink">
                     <iron-icon id="chatIconId" icon="communication:chat-bubble-outline"/>
                     <span className="with">{props.with}</span>
