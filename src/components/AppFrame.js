@@ -16,7 +16,9 @@ const AppFrame = props => {
                     <img className="logo" src={spottr_logo} alt="spottr logo"/>
                 </Link>
                 <img className="plus" src={plus} alt="add a workout event"/>
-                <img className="profile" src={profile} alt="your profile"/>
+                <Link to="activities">
+                    <img className="profile" src={profile} alt="your profile"/>
+                </Link>
                 <Link to="inbox">
                     <img className="inbox" id="inbox" src={inbox} alt="inbox"/>
                 </Link>

@@ -1,0 +1,14 @@
+section.activities {
+
+  img {
+    width: 99%;
+    padding: 2em 0;
+  }
+
+  @media(max-width: 320px) and (max-height: 480px) { /* iPhone 4 */
+
+    img {
+      padding: 0;
+    }
+  }
+}
