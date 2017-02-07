@@ -25,7 +25,6 @@ class InboxContainer extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div>
             {this.props.children ?

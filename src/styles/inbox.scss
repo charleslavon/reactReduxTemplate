@@ -1,6 +1,5 @@
 section.message-summary {
 
-
   margin-top: .5em;
   height: 3em;
   width: 96%;
@@ -25,4 +24,29 @@ section.message-summary {
     float: right;
     position: relative;
   }
+}
+
+section.message-detail {
+
+  margin-top: .5em;
+  height: 3em;
+  width: 96%;
+  padding: 3px;
+
+  div:nth-child(2n+2) {
+    padding: 10px 0;
+  }
+  .message {
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-left-color: #ff4081;
+    padding-top: 15px;
+  }
+  .from {
+    border-left-color: rgba(239, 189, 95, 0.3);
+  }
+  .message > span {
+    padding-left: 8px;
+  }
+
 }
