@@ -51,8 +51,10 @@ export default {
             inject: true
         }),
         new CopyWebpackPlugin(
-            [   {from:'bower_components/iron-*/*.html'},
-                {from:'bower_components/iron-icons/*.html'},
+            [   {from:'bower_components/web*/*.html'},
+                {from:'bower_components/web*/*.js'},
+                {from:'bower_components/neon-*/**/*.html'},
+                {from:'bower_components/iron-*/*.html'},
                 {from:'bower_components/paper-*/*.html'},
                 {from:'bower_components/font-*/*.html'},
                 {from:'bower_components/polymer/*.html'}

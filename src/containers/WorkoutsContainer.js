@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/wodActions';
 import WodDisplay from '../components/WodDisplay';
-import AppFrame from '../components/AppFrame';
 import * as api from '../actions/spottrapi';
 
 
@@ -93,26 +92,28 @@ class WorkoutsContainer extends React.Component {
 
 
   render() {
-    return (
-          <div className="workouts">
-              {this.state.wods.map(wod =>
-                  <WodDisplay key={wod.id} addAttendee={this.props.actions.addAttendee}
-                              location={wod.location} author={wod.author} id={wod.id}
-                              date={wod.date} likes={wod.likes} comments={wod.comments}
-                              attendees={wod.attendees} description={wod.description}
-                              images={wod.images}
-                              likeWod={this.props.actions.likeWod} addComment={this.props.actions.addComment} />
-              )}
-
-              {/*  <HomePage
-               onSave={this.props.actions.saveWod}
-               addAttendee={this.props.actions.addAttendee}
-               likeWod={this.props.actions.likeWod}
-               addComment={this.props.actions.addComment}
-               wods={this.state.wods}
-               /> */}
-          </div>
-    );
+      return (
+          <div>
+              {this.props.children ?
+                  (
+                      <div className="workouts">
+                          {this.props.children}
+                      </div>
+                  ) : (
+                      <div className="workouts">
+                          {this.state.wods.map(wod =>
+                              <WodDisplay key={wod.id} addAttendee={this.props.actions.addAttendee}
+                                          location={wod.location} author={wod.author} id={wod.id}
+                                          date={wod.date} likes={wod.likes} comments={wod.comments}
+                                          attendees={wod.attendees} description={wod.description}
+                                          images={wod.images}
+                                          likeWod={this.props.actions.likeWod}
+                                          addComment={this.props.actions.addComment}/>
+                          )}
+                      </div>
+                  )
+              }
+          </div>);
   }
 }
 

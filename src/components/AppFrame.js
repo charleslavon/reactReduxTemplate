@@ -15,7 +15,9 @@ const AppFrame = props => {
                 <Link to="wods">
                     <img className="logo" src={spottr_logo} alt="spottr logo"/>
                 </Link>
-                <img className="plus" src={plus} alt="add a workout event"/>
+                <Link to="wods/add">
+                    <img className="plus" src={plus} alt="add a workout event"/>
+                </Link>
                 <Link to="activities">
                     <img className="profile" src={profile} alt="your profile"/>
                 </Link>
@@ -32,7 +34,7 @@ const AppFrame = props => {
 };
 
 AppFrame.propTypes = {
-    children: React.PropTypes.arrayOf(React.PropTypes.object)
+    children: React.PropTypes.object
 };
 
 export default AppFrame;
