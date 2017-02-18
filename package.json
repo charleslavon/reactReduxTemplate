@@ -11,7 +11,7 @@
   },
   "scripts": {
     "prestart": "npm-run-all --parallel bowerInstall buildonly",
-    "start": "./node_modules/.bin/babel-node productionServer.js",
+    "start": "./node_modules/.bin/babel-node tools/productionServer.js",
     "start-message": "./node_modules/.bin/babel-node tools/startMessage.js",
     "prestartdev": "npm-run-all --parallel start-message",
     "bowerInstall": "./node_modules/.bin/bower install",
