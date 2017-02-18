@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
-import spottr_logo from '../images/spottr_logo.png';
-import plus from '../images/plus_freepix.png';
-import profile from '../images/profile_freepix.png';
-import inbox from '../images/inbox_freepix.png';
+import spottr_logo from '../images/spottr_logo.svg';
+import plus from '../images/plus_freepix.svg';
+import profile from '../images/profile_freepix.svg';
+import inbox from '../images/inbox_freepix.svg';
 import '../styles/frame.scss';
 
 const AppFrame = props => {
