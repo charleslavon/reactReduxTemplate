@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import '../styles/inbox.scss';
 
@@ -18,8 +18,9 @@ const MessageSummary = props => {
 };
 
 MessageSummary.propTypes = {
-    conversationWith: React.PropTypes.string.required,
-    sent: React.PropTypes.string.required
+    with: PropTypes.string.required,
+    id: PropTypes.string.required,
+    sent: PropTypes.string.required
 };
 
 export default MessageSummary;

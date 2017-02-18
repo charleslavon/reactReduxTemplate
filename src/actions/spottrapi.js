@@ -25,6 +25,7 @@ axios.defaults.headers.post['Content-Type'] = "application/graphql";
 export const saveAthlete = (name, email) => axios.post(server, `mutation {addAthlete(name: "${name}", email:"${email}") {id, name, email, latitude, longitude} }`);
 
 
+/* eslint-disable no-console */
 export const getWorkouts = () => {
   console.debug("making request to " + server);
   return axios.post(server, "query {workouts {id, description, author {id, name, email}, likes, comments {id, author {name}, comment}, attendees {id, name}}}");

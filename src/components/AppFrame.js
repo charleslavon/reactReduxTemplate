@@ -9,8 +9,6 @@ import '../styles/frame.scss';
 const AppFrame = props => {
     return (
         <div className="frame">
-            <link onLoad={() => handleLoad(event)} onError={() => handleError(event)}
-                  rel="import" href="/bower_components/paper-badge/paper-badge.html"/>
             <section className="header">
                 <Link to="wods">
                     <img className="logo" src={spottr_logo} alt="spottr logo"/>
@@ -34,7 +32,7 @@ const AppFrame = props => {
 };
 
 AppFrame.propTypes = {
-    children: React.PropTypes.object
+    children: PropTypes.object
 };
 
 export default AppFrame;

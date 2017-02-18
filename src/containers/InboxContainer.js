@@ -36,6 +36,7 @@ class InboxContainer extends React.Component {
                     <div>
                         {this.state.convos.map(conversation =>
                             <MessageSummary
+                                key={conversation.id}
                                 id={conversation.id}
                                 with={conversation.with}
                                 sent={conversation.sent}/>
@@ -48,7 +49,9 @@ class InboxContainer extends React.Component {
 }
 
 InboxContainer.propTypes = {
-    conversations: React.PropTypes.arrayOf(React.PropTypes.object)
+    conversations: React.PropTypes.arrayOf(React.PropTypes.object),
+    params: React.PropTypes.string,
+    children: React.PropTypes.array
 };
 
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import user1_1 from '../images/workoutFotos/User1.jpg';
 import user1_2 from '../images/workoutFotos/User1_2.jpg';
 import beach from '../images/workoutFotos/beach.jpg';
@@ -50,5 +50,8 @@ const Photo = props => {
     );
 };
 
+Photo.propTypes = {
+    images: PropTypes.object
+};
 
 export default Photo;

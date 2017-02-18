@@ -9,15 +9,13 @@ const WodAdd = ( props ) => {
           <section>
               <paper-input always-float-label label="How will you train today?" ref={node => {
                   description = node;
-              }}></paper-input>
+              }}/>
 
               <paper-input always-float-label label="Where" ref={node => {
                       location = node;
-                  }}></paper-input>
+                  }}/>
 
-              <paper-dropdown-menu label="When">
-
-              </paper-dropdown-menu>
+              <paper-dropdown-menu label="When"/>
           </section>
           <section className="carousel">
               <ul className="panes" style={{"width": "100%"}}>
