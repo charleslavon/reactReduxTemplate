@@ -96,6 +96,7 @@
     "mocha": "^3.1.2",
     "ramda": "^0.23.0",
     "react-addons-test-utils": "^15.3.2",
-    "sinon": "^1.17.6"
+    "sinon": "^1.17.6",
+    "webpack-merge": "^2.6.1"
   }
 }
