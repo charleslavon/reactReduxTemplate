@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import spottr_logo from '../images/spottr_logo.svg';
 import plus from '../images/plus_freepix.svg';
-import profile from '../images/profile_freepix.svg';
+import levels from '../images/levels.svg';
 import inbox from '../images/inbox_freepix.svg';
 import '../styles/frame.scss';
 
@@ -17,7 +17,7 @@ const AppFrame = props => {
                     <img className="plus" src={plus} alt="add a workout event"/>
                 </Link>
                 <Link to="activities">
-                    <img className="profile" src={profile} alt="your profile"/>
+                    <img className="activities" src={levels} alt="activites and interests"/>
                 </Link>
                 <Link to="inbox">
                     <img className="inbox" id="inbox" src={inbox} alt="inbox"/>
