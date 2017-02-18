@@ -16,23 +16,17 @@ class StartupContainer extends React.Component {
     };
 
     this.handleFacebookResponse = this.handleFacebookResponse.bind(this);
-    this.handleGoNavigate = this.handleGoNavigate.bind(this);
   }
 
   componentDidMount() {
-    /* is invoked immediately after a component is mounted.
-      Initialization that requires DOM nodes should go here.
-      If you need to load data from a remote endpoint, this is a good place
-      to instantiate the network request. Setting state in this method will
+      /* is invoked immediately after a component is mounted.
+       Initialization that requires DOM nodes should go here.
+       If you need to load data from a remote endpoint, this is a good place
+       to instantiate the network request. Setting state in this method will
        trigger a re-rendering.
-    */
+       */
 
   }
-
-  handleGoNavigate() {
-    this.context.router.push("wods");
-  }
-
 
   handleFacebookResponse(response) {
     // Send the token to the server and link the account
@@ -62,7 +56,10 @@ class StartupContainer extends React.Component {
   render() {
     return (
         <Startup
-          clickGo={this.handleGoNavigate}
+          clickGo={() => {
+              this.context.router.push("wods");
+              this.props.authenticate(); //this is a stub method for now
+          }}
         >
         {/*
           <FacebookLogin
@@ -81,17 +78,16 @@ class StartupContainer extends React.Component {
 }
 
 
-function mapStateToProps(state) {
-    return {
-      athletes: state.athletes
-    };
-  }
+const mapStateToProps = state => ({
+      athletes: state.athletes //this is jsut a stub for now.
+});
 
-function mapDispatchToProps(dispatch) {
-    return {
-      actions: bindActionCreators(actions, dispatch)
-    };
-  }
+const mapDispatchToProps = dispatch => ({
+    authenticate() {
+        console.log('dispatching authenticate');
+        dispatch(actions.authenticate());
+    }
+});
 
 StartupContainer.contextTypes = {
     router: PropTypes.object.isRequired
