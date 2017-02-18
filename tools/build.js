@@ -1,5 +1,3 @@
-// More info on Webpack's Node API here: https://webpack.github.io/docs/node.js-api.html
-
 /* eslint-disable no-console */
 import webpack from 'webpack';
 import config from '../webpack.config.prod';
@@ -10,7 +8,7 @@ process.env.NODE_ENV = 'production'; // this assures React is built in prod mode
 console.log(chalkProcessing('Generating minified bundle for production via Webpack. This will take a moment...'));
 
 webpack(config).run((error, stats) => {
-  if (error) { // so a fatal error occurred. Stop here.
+  if (error) {
     console.log(chalkError(error));
     return 1;
   }
@@ -22,14 +20,13 @@ webpack(config).run((error, stats) => {
   }
 
   if (jsonStats.hasWarnings) {
-    console.log(chalkWarning('Webpack generated the following warnings: '));
+    console.log(chalkWarning('Webpack build has a few warnings: '));
     jsonStats.warnings.map(warning => console.log(chalkWarning(warning)));
   }
 
   console.log(`Webpack stats: ${stats}`);
 
-  // if we got this far, the build succeeded.
-  console.log(chalkSuccess('Your app is compiled in production mode in /dist. It\'s ready to roll!'));
+  console.log(chalkSuccess('Production build is ready to go in /dist.'));
 
   return 0;
 });
