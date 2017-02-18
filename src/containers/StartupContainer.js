@@ -95,8 +95,8 @@ StartupContainer.contextTypes = {
 };
 
 StartupContainer.propTypes = {
-    actions: PropTypes.object.isRequired,
-    authenticate: PropTypes.func.required,
+    actions: PropTypes.object,
+    authenticate: PropTypes.func,
 };
 
 export default connect(

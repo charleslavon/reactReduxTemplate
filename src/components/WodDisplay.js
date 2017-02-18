@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import '../styles/workouts.scss';
 import PhotoCarousel from './PhotoCarousel';
 
@@ -36,9 +36,7 @@ const WodDisplay = props => {
 };
 
 WodDisplay.propTypes = {
-  author: React.PropTypes.string.required,
-  description: React.PropTypes.string.required,
-  images: React.PropTypes.arrayOf(React.PropTypes.object).required
+
 };
 
 export default WodDisplay;

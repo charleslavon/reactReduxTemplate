@@ -51,7 +51,6 @@ const Photo = props => {
 };
 
 Photo.propTypes = {
-    images: PropTypes.object
 };
 
 export default Photo;

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, {PropTypes} from 'react';
-import logo from '../images/spottr_large.png';
-import go from'../images/go.png';
+import logo from '../images/spottr_logo.svg';
+import go from'../images/go_button.svg';
 import spotter_banner from '../images/spottr_banner.png';
 import footer_bg_slice from '../images/footer_bg_slice.png';
 import '../styles/startup.scss';
@@ -20,16 +20,10 @@ class Startup extends React.Component {
    * */
   componentDidMount() {
 
-      let img = document.createElement("img");
-      img.src = "spottr_large.png";
-      img.setAttribute('class', "logo-large");
-      img.alt = "Spottr large logo";
-      document.querySelector("section.banner").appendChild(img);
 
-      img = document.querySelector("#go-btn");
-      img.src = "go.png";
-      img.alt = "login";
+
   }
+
 
   render() {
       let bannerStyle = {
@@ -43,7 +37,9 @@ class Startup extends React.Component {
       return (
           <div className="container" style={containerStyle}>
             <div className="startpage">
-              <section className="banner"/>
+              <section className="banner">
+                  <img src={logo} alt="Spottr Logo"/>
+              </section>
               <section className="banner-flag" style={bannerStyle}/>
               <section className="tagline">
                 <p className="highlight-text">
@@ -52,10 +48,10 @@ class Startup extends React.Component {
               </section>
               <section className="login">
                 <input type="email" placeholder="email address"/>
-                <img id="go-btn" onClick={() => {
-                    $('body').removeClass('bg_color');
-                    this.props.clickGo();
-                }}/>
+                  <img src={go} alt="login" onClick={() =>{
+                      $('body').removeClass('bg_color');
+                      this.props.clickGo();
+                  }}/>
               </section>
             </div>
           </div>
