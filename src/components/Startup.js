@@ -2,8 +2,7 @@
 import React, {PropTypes} from 'react';
 import logo from '../images/spottr_logo.svg';
 import go from'../images/go_button.svg';
-import spotter_banner from '../images/spottr_banner.png';
-import footer_bg_slice from '../images/footer_bg_slice.png';
+import spotter_banner from '../images/spottr_banner.svg';
 import '../styles/startup.scss';
 import $ from 'jquery';
 
@@ -27,7 +26,7 @@ class Startup extends React.Component {
 
   render() {
       let bannerStyle = {
-          backgroundImage: 'url(spottr_banner.png), url(footer_bg_slice.png)'
+          backgroundImage: 'url(spottr_banner.svg)'
       };
       let containerStyle = {
           backgroundColor: "#005176"
@@ -40,7 +39,9 @@ class Startup extends React.Component {
               <section className="banner">
                   <img src={logo} alt="Spottr Logo"/>
               </section>
-              <section className="banner-flag" style={bannerStyle}/>
+              <section className="banner-flag" style={bannerStyle}>
+                  <img src={spotter_banner} alt="Spottr banner flag"/>
+              </section>
               <section className="tagline">
                 <p className="highlight-text">
                   Fitness with a friend
