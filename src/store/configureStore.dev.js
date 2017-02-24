@@ -1,15 +1,23 @@
-// This file merely configures the store for hot reloading.
-
-// With Redux, the actual stores are in /reducers.
-
-import {createStore, compose} from 'redux';
+// This file configures the store for hot reloading.
+import {createStore, applyMiddleware, compose} from 'redux';
 import rootReducer from '../reducers';
+import promiseMiddleware from 'redux-promise';
+import createLogger from 'redux-logger';
 
-export default function configureStore(initialState) {
-  const store = createStore(rootReducer, initialState, compose(
-    // Add other middleware on this line...
-    window.devToolsExtension ? window.devToolsExtension() : f => f // add support for Redux dev tools
-    )
+
+const configureStore = initialState => {
+
+  const middlewares = [promiseMiddleware];
+
+  // to support for Redux dev tools
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+  //logger must be last in the middleware chain
+  middlewares.push(createLogger());
+
+  const store = createStore(rootReducer,
+      initialState,
+      composeEnhancers(applyMiddleware(...middlewares))
   );
 
   if (module.hot) {
@@ -22,3 +30,5 @@ export default function configureStore(initialState) {
 
   return store;
 }
+
+export default configureStore;

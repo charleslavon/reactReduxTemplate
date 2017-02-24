@@ -1,6 +1,15 @@
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import promiseMiddleware from 'redux-promise';
 import rootReducer from '../reducers';
 
-export default function configureStore(initialState) {
-  return createStore(rootReducer, initialState);
+const configureStore = initialState =>  {
+
+    const middlewares = [promiseMiddleware];
+
+    return createStore(rootReducer,
+        initialState,
+        applyMiddleware(...middlewares)
+    );
 }
+
+export default configureStore;

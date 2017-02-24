@@ -96,6 +96,8 @@
     "mocha": "^3.1.2",
     "ramda": "^0.23.0",
     "react-addons-test-utils": "^15.3.2",
+    "redux-logger": "^2.8.1",
+    "redux-promise": "^0.5.3",
     "sinon": "^1.17.6",
     "webpack-merge": "^2.6.1"
   }
