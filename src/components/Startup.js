@@ -25,9 +25,6 @@ class Startup extends React.Component {
 
 
   render() {
-      let bannerStyle = {
-          backgroundImage: 'url(spottr_banner.svg)'
-      };
       let containerStyle = {
           backgroundColor: "#005176"
       };
@@ -39,7 +36,7 @@ class Startup extends React.Component {
               <section className="banner">
                   <img src={logo} alt="Spottr Logo"/>
               </section>
-              <section className="banner-flag" style={bannerStyle}>
+              <section className="banner-flag">
                   <img src={spotter_banner} alt="Spottr banner flag"/>
               </section>
               <section className="tagline">

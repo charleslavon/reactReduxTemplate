@@ -1,14 +1,92 @@
-section.activities {
-
-  img {
+.grid-container {
     width: 99%;
-    padding: 2em 0;
-  }
+    /* to support padding/gutters, set a border box on all elements inside the grid */
+    box-sizing: border-box;
+}
 
-  @media(max-width: 320px) and (max-height: 480px) { /* iPhone 4 */
+section.row {
+    padding: 3% 0;
+}
 
-    img {
-      padding: 0;
+.row:before,
+.row:after {
+    /* clear fix to ensure that our rows expand sufficiently to contain their child elemments */
+    content: "";
+    display: table;
+    clear: both;
+}
+.row:after {
+  margin: 15px 0;
+}
+
+
+/*column positioning*/
+
+[class*='col-'] {
+    /* using floats to position columns is very popular and supposedly the 'least error prone' */
+    float: left;
+    /* this is necessary because otherwise when columns are empty they would stack vertically */
+    min-height: 1px;
+    /* the gutter */
+    padding: 3px;
+}
+
+.col-left,
+.col-right {
+    width: 10%;
+    position: relative;
+
+    .child {
+      position: absolute;
+      padding: 0 8px;
     }
-  }
+}
+
+.col-center {
+    width: 72%;
+    position: relative;
+
+    paper-slider {
+        width: 100%;
+        paper-slider-knob-color: rgb(239, 189, 95);
+        paper-slider-active-color: rgb(239, 189, 95);
+    }
+
+}
+
+
+/*-- colorful styling to show the grid --*/
+
+
+[class*='col-'] > p {
+
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+section.activities {
+    background-color: rgba(0,146,193, 0.99);
+    padding-top: 10px;
+
+    /* Targeted Styles */
+    @media(max-width: 414px) and (device-height: 736px) {
+        /* iPhone 6+, 7+ */
+    }
+    @media (max-width: 360px) and (device-height: 640px) {
+        /* Galaxy s6 edge 360px x 640px */
+    }
+    @media(max-width: 380px) and (device-height: 667px) {
+        /* iPhone 6 & 7 */
+    }
+    @media(max-width: 320px) and (max-height: 568px) {
+        /* iPhone 5 */
+    }
+    @media(max-width: 320px) and (max-height: 480px) {
+        /* iPhone 4 */
+        img {
+            padding: 0;
+        }
+    }
 }
